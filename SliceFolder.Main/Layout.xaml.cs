@@ -7,9 +7,10 @@ namespace SliceFolder.Main
     /// </summary>
     public partial class Layout : UserControl
     {
-        public Layout()
+        public Layout(LayoutViewModel vm)
         {
             InitializeComponent();
+            this.DataContext = vm;
         }
     }
 }

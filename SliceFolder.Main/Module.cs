@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace SliceFolder.Main;
 
-public class MainModule : IModule
+public class Module : IModule
 {
     public void Initialize(IServiceProvider serviceProvider)
     {
@@ -13,6 +13,7 @@ public class MainModule : IModule
 
     public void Register(IServiceCollection services)
     {
-        services.RegisterLayout<Layout> ("Main");
+        services.RegisterLayout<Layout> ();
+        services.AddSingleton<LayoutViewModel> ();
     }
 }

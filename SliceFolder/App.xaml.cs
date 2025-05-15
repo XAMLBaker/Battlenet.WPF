@@ -13,7 +13,8 @@ public partial class App : FlexApplication
 
     protected override void ModuleContext(FlexAppBuilder builder)
     {
-        builder.AddModule<Main.MainModule> ();
+        builder.AddModule<Main.Module> ();
+        builder.AddModule<Sub.Module> ();
     }
 
     protected override void RegisterService(IServiceCollection services)
