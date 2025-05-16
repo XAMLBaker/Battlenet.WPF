@@ -14,6 +14,7 @@ public class Module : IModule
     public void Register(IServiceCollection services)
     {
         services.RegisterLayout<Layout> ();
+        services.RegisterLayout<Region> ();
         services.AddSingleton<LayoutViewModel> ();
     }
 }

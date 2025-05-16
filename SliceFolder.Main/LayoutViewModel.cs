@@ -12,6 +12,7 @@ public partial class LayoutViewModel : ObservableObject
     {
         this._navigator = navigator;
     }
+
     [RelayCommand]
     private void Home()
     {
@@ -23,16 +24,16 @@ public partial class LayoutViewModel : ObservableObject
     {
         this._navigator.Move ("SliceFolder.Sub"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
     }
+
     [RelayCommand]
     private void Route2()
     {
-        // this._navigator.Move ("SliceFolder.Sub.Layout");
-        this._navigator.Move ("SliceFolder.Sub.Test"); // or this._navigator.Move ("SliceFolder/Sub");
+        this._navigator.Move ("SliceFolder.Sub.Test"); // or this._navigator.Move ("SliceFolder/Sub/Test");
     }
+
     [RelayCommand]
     private void Route3()
     {
-        // this._navigator.Move ("SliceFolder.Sub.Layout");
         this._navigator.Move ("SliceFolder.Sub.Test2"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
     }
 }

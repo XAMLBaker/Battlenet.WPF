@@ -28,7 +28,5 @@
             Command="{Binding Route3Command}"
             Content="Sub.Layout.Test2 이동" />
     </StackPanel>
-    <Label HorizontalAlignment="Center" VerticalAlignment="Center">
-        Region 영역입니다
-    </Label>
+    
 </DockPanel>
