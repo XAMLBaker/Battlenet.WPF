@@ -16,7 +16,7 @@ public partial class LayoutViewModel : ObservableObject
     [RelayCommand]
     private void Home()
     {
-
+        this._navigator.RootLayout ();
     }
 
     [RelayCommand]

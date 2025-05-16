@@ -9,6 +9,6 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Label VerticalAlignment="Center" HorizontalContentAlignment="Center">
-        Test2의 Region입니다.
+        SliceFolder.Sub.Test2의 Region입니다.
     </Label>
 </UserControl>

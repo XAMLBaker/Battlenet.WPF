@@ -12,21 +12,29 @@
         <Label Foreground="White">
             MainLayout 영역입니다.
         </Label>
-        <Button
-            Width="100"
-            Height="50"
-            Command="{Binding Route1Command}"
-            Content="Sub.Layout 이동" />
-        <Button
-            Width="100"
-            Height="50"
-            Command="{Binding Route2Command}"
-            Content="Sub.Layout.Test 이동" />
-        <Button
-            Width="100"
-            Height="50"
-            Command="{Binding Route3Command}"
-            Content="Sub.Layout.Test2 이동" />
+        <StackPanel Orientation="Horizontal">
+            <Button
+                Width="100"
+                Height="50"
+                Command="{Binding HomeCommand}"
+                Content="Root 이동" />
+            <Button
+                Width="100"
+                Height="50"
+                Command="{Binding Route1Command}"
+                Content="Sub.Layout 이동" />
+            <Button
+                Width="100"
+                Height="50"
+                Command="{Binding Route2Command}"
+                Content="Sub.Layout.Test 이동" />
+            <Button
+                Width="100"
+                Height="50"
+                Command="{Binding Route3Command}"
+                Content="Sub.Layout.Test2 이동" />
+        </StackPanel>
+
     </StackPanel>
-    
+
 </DockPanel>

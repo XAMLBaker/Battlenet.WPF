@@ -10,6 +10,6 @@
     Background="Red"
     mc:Ignorable="d">
     <Label VerticalAlignment="Center" HorizontalContentAlignment="Center">
-        Test의 Layout입니다.
+        SliceFolder.Sub.Test의 Layout입니다.
     </Label>
 </DockPanel>

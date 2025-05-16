@@ -8,12 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-        <Button
-            Width="100"
-            Height="50"
-            Command="{Binding HomeCommand}"
-            Content="홈으로"
-            DockPanel.Dock="Left" />
-    </StackPanel>
+    <Label DockPanel.Dock="Top">
+        SliceFolder.Sub의 Layout 영역입니다.
+    </Label>
 </DockPanel>
