@@ -19,8 +19,20 @@ public partial class LayoutViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void Route()
+    private void Route1()
     {
-        this._navigator.Move ("SliceFolder.Sub.Layout"); // or this._navigator.Move ("SliceFolder/Sub/Layout");
+        this._navigator.Move ("SliceFolder.Sub"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
+    }
+    [RelayCommand]
+    private void Route2()
+    {
+        // this._navigator.Move ("SliceFolder.Sub.Layout");
+        this._navigator.Move ("SliceFolder.Sub.Test"); // or this._navigator.Move ("SliceFolder/Sub");
+    }
+    [RelayCommand]
+    private void Route3()
+    {
+        // this._navigator.Move ("SliceFolder.Sub.Layout");
+        this._navigator.Move ("SliceFolder.Sub.Test2"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
     }
 }

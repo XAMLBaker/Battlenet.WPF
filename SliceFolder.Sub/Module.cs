@@ -14,6 +14,9 @@ namespace SliceFolder.Sub
         public void Register(IServiceCollection services)
         {
             services.RegisterLayout<Layout> ();
+            services.RegisterLayout<Region> ();
+            services.RegisterLayout<Test.Layout> ();
+            services.RegisterLayout<Test2.Region> ();
             services.AddSingleton<LayoutViewModel> ();
         }
     }
