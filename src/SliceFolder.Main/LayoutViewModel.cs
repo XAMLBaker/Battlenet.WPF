@@ -6,34 +6,34 @@ namespace SliceFolder.Main;
 
 public partial class LayoutViewModel : ObservableObject
 {
-    private readonly INavigator _navigator;
+    private readonly ILayoutNavigator _layoutNavigator;
 
-    public LayoutViewModel(INavigator navigator)
+    public LayoutViewModel(ILayoutNavigator layoutNavigator)
     {
-        this._navigator = navigator;
+        this._layoutNavigator = layoutNavigator;
     }
 
     [RelayCommand]
     private void Home()
     {
-        this._navigator.RootLayout ();
+        this._layoutNavigator.RootLayout ();
     }
 
     [RelayCommand]
     private void Route1()
     {
-        this._navigator.Move ("SliceFolder.Sub"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
+        this._layoutNavigator.NavigateTo ("SliceFolder.Sub"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
     }
 
     [RelayCommand]
     private void Route2()
     {
-        this._navigator.Move ("SliceFolder.Sub.Test"); // or this._navigator.Move ("SliceFolder/Sub/Test");
+        this._layoutNavigator.NavigateTo ("SliceFolder.Sub.Test"); // or this._navigator.Move ("SliceFolder/Sub/Test");
     }
 
     [RelayCommand]
     private void Route3()
     {
-        this._navigator.Move ("SliceFolder.Sub.Test2"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
+        this._layoutNavigator.NavigateTo ("SliceFolder.Sub.Test2"); // or this._navigator.Move ("SliceFolder/Sub/Test2");
     }
 }

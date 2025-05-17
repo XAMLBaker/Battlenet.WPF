@@ -6,17 +6,17 @@ namespace SliceFolder.Sub
 {
     public partial class LayoutViewModel: ObservableObject
     {
-        private readonly INavigator _navigator;
+        private readonly ILayoutNavigator _layoutNavigator;
 
-        public LayoutViewModel(INavigator navigator) 
+        public LayoutViewModel(ILayoutNavigator layoutNavigator)
         {
-            this._navigator = navigator;
+            this._layoutNavigator = layoutNavigator;
         }
 
         [RelayCommand]
         private void Home()
         {
-            this._navigator.RootLayout ();
+            this._layoutNavigator.RootLayout ();
         }
     }
 }
