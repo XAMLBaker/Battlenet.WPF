@@ -9,7 +9,7 @@ namespace SliceFolder;
 /// </summary>
 public partial class App : FlexApplication
 {
-    protected override void Render() => flex.MainLayout<Main.Layout> ();
+    protected override void Render() => flex.BaseLayout<Main.Layout> ();
 
     protected override void ModuleContext(FlexAppBuilder builder)
     {
