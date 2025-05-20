@@ -1,6 +1,7 @@
 ﻿using FlexMVVM;
 using FlexMVVM.Modularity;
 using FlexMVVM.WPF;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 namespace SliceFolder;
@@ -23,5 +24,6 @@ public partial class App : FlexApplication
     protected override void Register(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterLayout<Layout> ();
+        containerRegistry.Services.AddSingleton<LayoutViewModel> ();
     }
 }
