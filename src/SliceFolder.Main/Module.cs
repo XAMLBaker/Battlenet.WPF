@@ -1,20 +1,20 @@
 ﻿using FlexMVVM;
-using FlexMVVM.WPF;
+using FlexMVVM.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SliceFolder.Main;
 
 public class Module : IModule
 {
-    public void Initialize(IServiceProvider serviceProvider)
+    public void Initialize(IServiceProvider containerProvider)
     {
 
     }
 
-    public void Register(IServiceCollection services)
+    public void Register(IContainerRegistry containerRegistry)
     {
-        services.RegisterLayout<Layout> ();
-        services.RegisterLayout<Region> ();
-        services.AddSingleton<LayoutViewModel> ();
+        containerRegistry.RegisterLayout<Layout> ();
+        containerRegistry.RegisterLayout<Region> ();
+        containerRegistry.Services.AddSingleton<LayoutViewModel> ();
     }
 }
