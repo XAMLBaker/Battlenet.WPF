@@ -13,8 +13,7 @@ public class Module : IModule
 
     public void Register(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterLayout<Layout> ();
         containerRegistry.RegisterLayout<Region> ();
-        containerRegistry.Services.AddSingleton<LayoutViewModel> ();
+        containerRegistry.Services.AddSingleton<RegionViewModel> ();
     }
 }

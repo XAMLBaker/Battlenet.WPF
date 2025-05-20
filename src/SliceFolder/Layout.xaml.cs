@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SliceFolder.Sub
+namespace SliceFolder
 {
     /// <summary>
-    /// Region.xaml에 대한 상호 작용 논리
+    /// Layout.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class Region : UserControl
+    public partial class Layout : DockPanel
     {
-        public Region()
+        public Layout()
         {
             InitializeComponent ();
         }

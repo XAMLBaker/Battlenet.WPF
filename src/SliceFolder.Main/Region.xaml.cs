@@ -22,7 +22,7 @@ namespace SliceFolder.Main
     {
         public Region()
         {
-            InitializeComponent();
+            InitializeComponent ();
         }
     }
 }
