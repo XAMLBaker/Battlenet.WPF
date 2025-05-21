@@ -13,14 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
     <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF\FlexMVVM.WPF.csproj" />
     <ProjectReference Include="..\SliceFolder.Main\SliceFolder.Main.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Components\SideBar.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
 
 </Project>

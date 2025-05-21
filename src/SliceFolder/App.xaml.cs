@@ -1,8 +1,7 @@
 ﻿using FlexMVVM;
 using FlexMVVM.Modularity;
 using FlexMVVM.WPF;
-using Microsoft.Extensions.DependencyInjection;
-using System.Windows;
+using FlexMVVM.WPF.Markup;
 
 namespace SliceFolder;
 
@@ -11,10 +10,8 @@ namespace SliceFolder;
 /// </summary>
 public partial class App : FlexApplication
 {
-    protected override void Render() => flex
-                                            .Window (() => new WindowStyle ())
-                                            .DefineNestedLayout<Layout> ()
-                                            .StartWithLayout<Main.Region>();
+    protected override void Render() => flex.DefineNestedLayout<Layout> ()
+                                            .StartWithLayout<Main.Content> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
@@ -24,6 +21,13 @@ public partial class App : FlexApplication
     protected override void Register(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterLayout<Layout> ();
-        containerRegistry.Services.AddSingleton<LayoutViewModel> ();
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized ();
+#if DEBUG
+        HotReloadManager.Init (this);
+#endif
     }
 }
