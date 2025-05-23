@@ -16,31 +16,54 @@ namespace SliceFolder.Login
 
         protected override Visual Build()
             => new Grid ()
-              .Background ("#15171e")
-              .Children (
-                  new Border ()
-                  .Margin (1)
-                  .Brush ("#36383e")
-                  .Thickness (1)
-                  .Children<Border, VStack> (
-                                      new HStack ()
-                                        .Right ()
-                                        .Children (
-                                              new WindowButton (WindowButtonType.MINIAML)
-                                                .Background (Colors.Transparent, "#23252b")
-                                                .Foreground("#4a4c51", "#ffffff")
-                                                .Height(22)
-                                                .Width(37),
-                                              new WindowButton (WindowButtonType.EXIT)
-                                                .Background (Colors.Transparent, "#dd1313")
-                                                .Foreground ("#4a4c51", "#ffffff")
-                                                .Height (22)
-                                                .Width(37)
-                                        ),
-                                      new Image (){
-                                          Stretch = Stretch.None
-                                      }
-                                      .Source(PackUrlHelper.Load(this, "Resources/battlenet.png"))
-                  ));
+                  .Background ("#15171e")
+                  .Children 
+                   (
+                        new Border ()
+                            .Margin (1)
+                            .Brush ("#36383e")
+                            .Thickness (1)
+                            .Child 
+                            (
+                                 new VStack()
+                                    .Children(
+                                         new HStack ()
+                                             .Right ()
+                                             .Children 
+                                             (
+                                                  new WindowButton (WindowButtonType.MINIAML)
+                                                      .Background (Colors.Transparent, "#23252b")
+                                                      .Foreground("#4a4c51", "#ffffff")
+                                                      .Height(22)
+                                                      .Width(37),
+                                                  new WindowButton (WindowButtonType.EXIT)
+                                                      .Background (Colors.Transparent, "#dd1313")
+                                                      .Foreground ("#4a4c51", "#ffffff")
+                                                      .Height (22)
+                                                      .Width(37)
+                                             ),
+                                         new Border()
+                                             .Padding (top: 2, left: 25, right: 26, bottom: 36)
+                                             .Child(
+                                             new VStack()
+                                                 .Children(
+                                                     new Image ()
+                                                     {
+                                                         Stretch = Stretch.None
+                                                     }
+                                                     .Source (PackUrlHelper.Load (this, "Resources/battlenet.png")),
+
+                                                     new SettingButton ()
+                                                         .Height (26)
+                                                         .Width (26)
+                                                         .Background ("#313238")
+                                                         .Foreground (Colors.Transparent, "#3e4046")
+                                                         .Right()
+                                                 )
+                                             )
+                                         
+                                    )
+                            )
+                   );
     }
 }
