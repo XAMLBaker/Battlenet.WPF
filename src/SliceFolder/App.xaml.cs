@@ -2,6 +2,8 @@
 using FlexMVVM.Modularity;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
+using System.Diagnostics;
+using System.Windows;
 
 namespace SliceFolder;
 
@@ -10,17 +12,17 @@ namespace SliceFolder;
 /// </summary>
 public partial class App : FlexApplication
 {
-    protected override void Render() => flex.DefineNestedLayout<Layout> ()
-                                            .StartWithLayout<Main.Content> ();
+    protected override void Render() => flex.Window(()=> new MainWindow())
+                                            .StartWithLayout<Login.Content> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
+        moduleCatalog.AddModule<Login.Module> ();
         moduleCatalog.AddModule<Main.Module> ();
     }
 
     protected override void Register(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterLayout<Layout> ();
     }
 
     protected override void OnInitialized()
@@ -29,5 +31,11 @@ public partial class App : FlexApplication
 #if DEBUG
         HotReloadManager.Init (this);
 #endif
+
+
+        foreach (var name in Application.Current.Resources.MergedDictionaries)
+        {
+            Debug.WriteLine (name.Source);
+        }
     }
 }

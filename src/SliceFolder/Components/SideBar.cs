@@ -7,6 +7,7 @@ namespace SliceFolder.Components
     public partial class SideBar : Component
     {
         protected override Visual Build()
-            => new ListBox ();
+            => new Grid()
+                    .Background(Colors.Red);
     }
 }

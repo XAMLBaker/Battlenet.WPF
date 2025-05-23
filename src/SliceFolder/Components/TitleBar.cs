@@ -1,7 +1,6 @@
 ﻿using FlexMVVM;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -9,9 +8,9 @@ namespace SliceFolder.Components
 {
     public class TitleBar : Component
     {
-        private readonly State<Visibility> _sideBarState;
+        private readonly State<bool> _sideBarState;
 
-        public TitleBar(State<Visibility> sideBarState)
+        public TitleBar(State<bool> sideBarState)
         {
             this._sideBarState = sideBarState;
         }
@@ -37,6 +36,6 @@ namespace SliceFolder.Components
                            )
                    );
 
-        private Visibility ShowHidden() => this._sideBarState.Value == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
+        private bool ShowHidden() => this._sideBarState.Value = !this._sideBarState.Value;
     }
 }

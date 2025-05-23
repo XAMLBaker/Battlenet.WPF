@@ -1,18 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
     <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF\FlexMVVM.WPF.csproj" />
-    <ProjectReference Include="..\SliceFolder.Login\SliceFolder.Login.csproj" />
-    <ProjectReference Include="..\SliceFolder.Main\SliceFolder.Main.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Resource Include="Resources\battlenet.png" />
+  </ItemGroup>
 </Project>
