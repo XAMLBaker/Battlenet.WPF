@@ -17,10 +17,10 @@ public class SettingButton : ButtonComponent
                             }.Fill("#fcfcfc")
                             .Thickness(2.5)
                       )
-                      .Width(this.Width -11)
-                      .Height(this.Height -11)
+                      .Width(this.Width -13)
+                      .Height(this.Height -13)
               )
-              .CornerRadius (2)
+              .CornerRadius (6)
               .Thickness(1)
               .Link(BorderBrushProperty, nameof(Foreground),this)
               .Link(BackgroundProperty, nameof(Background),this);

@@ -43,7 +43,7 @@ namespace SliceFolder.Login
                                                       .Width(37)
                                              ),
                                          new Border()
-                                             .Padding (top: 2, left: 25, right: 26, bottom: 36)
+                                             .Padding (top: 10, left: 25, right: 26, bottom: 36)
                                              .Child(
                                              new VStack()
                                                  .Children(
@@ -54,8 +54,9 @@ namespace SliceFolder.Login
                                                      .Source (PackUrlHelper.Load (this, "Resources/battlenet.png")),
 
                                                      new SettingButton ()
-                                                         .Height (26)
-                                                         .Width (26)
+                                                         .Margin(top:12)
+                                                         .Height (28)
+                                                         .Width (28)
                                                          .Background ("#313238")
                                                          .Foreground (Colors.Transparent, "#3e4046")
                                                          .Right()
