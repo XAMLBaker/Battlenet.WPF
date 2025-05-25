@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
-    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF\FlexMVVM.WPF.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\battlenet.png" />

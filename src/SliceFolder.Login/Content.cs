@@ -54,17 +54,50 @@ namespace SliceFolder.Login
                                                      .Source (PackUrlHelper.Load (this, "Resources/battlenet.png")),
 
                                                      new SettingButton ()
-                                                         .Margin(top:12)
+                                                         .Margin(top:15, bottom:10)
                                                          .Height (28)
                                                          .Width (28)
                                                          .Background ("#313238")
                                                          .Foreground (Colors.Transparent, "#3e4046")
-                                                         .Right()
+                                                         .Right(),
+
+                                                     UserTextBoxTemplate()
+                                                        .Margin (bottom: 8)                                                       
+                                                        .WaterMarkText("이메일 또는 휴대전화")
+                                                        .WaterMarkTextColor("#88888b"),
+
+                                                     UserTextBoxTemplate()
+                                                        .WaterMarkText ("비밀번호")
+                                                        .WaterMarkTextColor ("#88888b"),
+
+
+                                                     new VStack()
+                                                        .Children(
+                                                            new SocialButton(SocialButtonType.GOOGLE)
+                                                                .Width(48)
+                                                                .Height(48)
+                                                                .Background(Colors.White,"#cecece"),
+                                                            new SocialButton (SocialButtonType.FACEBOOK)
+                                                                .Width (48)
+                                                                .Height (48)
+                                                                .Background ("#3172d9", "#cecece")
+                                                         )
+
+
                                                  )
                                              )
-                                         
                                     )
                             )
                    );
+
+        private FlexTextBox UserTextBoxTemplate()
+            => new FlexTextBox ()
+                    .Background ("#101117")
+                    .BorderBrush ("#696b6f")
+                    .HoverBrush("#7f8084")
+                    .BorderThickness (1.5)
+                    .CornerRadius (3)
+                    .Height (33)
+                    .Fontsize (13);
     }
 }

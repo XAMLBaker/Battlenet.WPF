@@ -10,6 +10,7 @@ namespace SliceFolder.Login.Components
         MINIAML,
         EXIT
     }
+
     public partial class WindowButton : ButtonComponent
     {
         private readonly string minmimal = "M20,14H4V10H20";
