@@ -61,15 +61,8 @@ namespace SliceFolder.Login
                                                          .Foreground (Colors.Transparent, "#3e4046")
                                                          .Right(),
 
-                                                     UserTextBoxTemplate()
-                                                        .Margin (bottom: 8)                                                       
-                                                        .WaterMarkText("이메일 또는 휴대전화")
-                                                        .WaterMarkTextColor("#88888b"),
-
-                                                     UserTextBoxTemplate()
-                                                        .Margin (bottom: 12)
-                                                        .WaterMarkText ("비밀번호")
-                                                        .WaterMarkTextColor ("#88888b"),
+                                                     UserTextBoxTemplate("이메일 또는 휴대전화").Margin (bottom: 8),
+                                                     UserTextBoxTemplate("비밀번호").Margin (bottom: 12),
 
                                                      new FlexCheckBox()
                                                         .BoxStyle(()=> new FlexCheckBoxModel()
@@ -103,13 +96,15 @@ namespace SliceFolder.Login
                             )
                    );
 
-        private FlexTextBox UserTextBoxTemplate()
+        private FlexTextBox UserTextBoxTemplate(string waterMarkText)
             => new FlexTextBox ()
+                    .WaterMarkText (waterMarkText)
                     .Background ("#101117")
                     .BorderBrush ("#696b6f", "#7f8084")
                     .BorderThickness (1.5)
                     .CornerRadius (3)
                     .Height (33)
-                    .FontSize (13);
+                    .FontSize (13)
+                    .WaterMarkTextColor ("#88888b");
     }
 }
