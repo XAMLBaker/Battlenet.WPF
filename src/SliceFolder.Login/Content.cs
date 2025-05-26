@@ -88,8 +88,6 @@ namespace SliceFolder.Login
                                                                 .Height (48)
                                                                 .Background ("#3172d9", "#1860b7")
                                                          )
-
-
                                                  )
                                              )
                                     )
