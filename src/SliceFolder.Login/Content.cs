@@ -67,15 +67,23 @@ namespace SliceFolder.Login
                                                         .WaterMarkTextColor("#88888b"),
 
                                                      UserTextBoxTemplate()
+                                                        .Margin (bottom: 12)
                                                         .WaterMarkText ("비밀번호")
                                                         .WaterMarkTextColor ("#88888b"),
 
                                                      new FlexCheckBox()
-                                                        .Background(Colors.White)
-                                                        .CheckBoxSize(30)
-                                                        .Padding(7)
-                                                        .Content("h111111111")
-                                                        .Foreground(Colors.White),
+                                                        .BoxStyle(()=> new FlexCheckBoxModel()
+                                                                            .BackColor("#101117")
+                                                                            .CheckColor("#46a4fc")
+                                                                            .Size (18)
+                                                                            .Padding (1.2,3)
+                                                                            .CornerRadius (2)
+                                                                            .Thickness(1.5)
+                                                                            .BorderBrush ("#696b6f", "#7f8084"))
+                                                        .Foreground("#bebec0")
+                                                        .FontSize (13)
+                                                        .Content("로그인 상태 유지하기"),
+
                                                      new VStack()
                                                         .Children(
                                                             new SocialButton(SocialButtonType.GOOGLE)
@@ -98,11 +106,10 @@ namespace SliceFolder.Login
         private FlexTextBox UserTextBoxTemplate()
             => new FlexTextBox ()
                     .Background ("#101117")
-                    .BorderBrush ("#696b6f")
-                    .HoverBrush("#7f8084")
+                    .BorderBrush ("#696b6f", "#7f8084")
                     .BorderThickness (1.5)
                     .CornerRadius (3)
                     .Height (33)
-                    .Fontsize (13);
+                    .FontSize (13);
     }
 }
