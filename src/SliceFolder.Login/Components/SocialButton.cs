@@ -1,5 +1,5 @@
-﻿using FlexMVVM.WPF.Markup;
-using System.Net.Sockets;
+﻿using FlexMVVM.WPF;
+using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;

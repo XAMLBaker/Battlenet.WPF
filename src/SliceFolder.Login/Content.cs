@@ -70,7 +70,12 @@ namespace SliceFolder.Login
                                                         .WaterMarkText ("비밀번호")
                                                         .WaterMarkTextColor ("#88888b"),
 
-
+                                                     new FlexCheckBox()
+                                                        .Background(Colors.White)
+                                                        .CheckBoxSize(30)
+                                                        .Padding(7)
+                                                        .Content("h111111111")
+                                                        .Foreground(Colors.White),
                                                      new VStack()
                                                         .Children(
                                                             new SocialButton(SocialButtonType.GOOGLE)
@@ -80,7 +85,7 @@ namespace SliceFolder.Login
                                                             new SocialButton (SocialButtonType.FACEBOOK)
                                                                 .Width (48)
                                                                 .Height (48)
-                                                                .Background ("#3172d9", "#cecece")
+                                                                .Background ("#3172d9", "#1860b7")
                                                          )
 
 
