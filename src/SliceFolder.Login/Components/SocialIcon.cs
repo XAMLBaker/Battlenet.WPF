@@ -1,7 +1,6 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -59,55 +58,4 @@ namespace SliceFolder.Login.Components
                         }
                         .Fill (Colors.White)
                     );
-    }
-
-    internal partial class SocialButton : ButtonComponent
-    {
-        Viewbox iconType;
-        public SocialButton(SocialButtonType socialButtonType)
-        {
-            if (socialButtonType == SocialButtonType.GOOGLE)
-            {
-                this.iconType = IconPathSupport.Google;
-            }
-            else if (socialButtonType == SocialButtonType.FACEBOOK)
-            {
-                this.iconType = IconPathSupport.Facebook;
-            }
-            else if (socialButtonType == SocialButtonType.APPLE)
-            {
-
-            }
-            else if (socialButtonType == SocialButtonType.XBOX)
-            {
-
-            }
-            else if (socialButtonType == SocialButtonType.PLAYSTATION)
-            {
-
-            }
-            else if (socialButtonType == SocialButtonType.NINTENDO)
-            {
-
-            }
-            else if (socialButtonType == SocialButtonType.STEAM)
-            {
-
-            }
-        }
-        protected override Visual Build()
-            => new Border ()
-                   {
-                       Cursor = Cursors.Hand
-                   }
-                   .Child (
-                        this.iconType
-                            .Width (18)
-                            .Height (18)
-                   )
-                   .CornerRadius (5)
-                   .Link (BackgroundProperty, nameof (Background), this)
-                   .Width (this.Width)
-                   .Height (this.Height);
-    }
 }

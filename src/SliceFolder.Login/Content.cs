@@ -1,7 +1,9 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Login.Components;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace SliceFolder.Login
@@ -75,58 +77,61 @@ namespace SliceFolder.Login
                                                             .FontSize (13)
                                                             .Content ("로그인 상태 유지하기"),
 
-                                                            new FlexPanel ()
-                                                                .Align (AlignContent.Start)
-                                                                .Justify (JustifyContent.SpaceAuto)
-                                                                .AddHeight(13)
-                                                                .Children (
-                                                                    new SocialButton (SocialButtonType.GOOGLE)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background (Colors.White, "#cecece"),
-                                                                    new SocialButton (SocialButtonType.FACEBOOK)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background ("#3172d9", "#1860b7"),
-                                                                        new SocialButton (SocialButtonType.FACEBOOK)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background ("#3172d9", "#1860b7")
-                                                                ),
-                                                            new FlexPanel ()
-                                                                .Align(AlignContent.End)
-                                                                .Justify (JustifyContent.SpaceAuto)
-                                                                .AddHeight (13)
-                                                                .Children (
-                                                                    new SocialButton (SocialButtonType.GOOGLE)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background (Colors.White, "#cecece"),
-                                                                    new SocialButton (SocialButtonType.FACEBOOK)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background ("#3172d9", "#1860b7"),
-                                                                        new SocialButton (SocialButtonType.FACEBOOK)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background ("#3172d9", "#1860b7"),
-                                                                        new SocialButton (SocialButtonType.FACEBOOK)
-                                                                        .Width (48)
-                                                                        .Height (48)
-                                                                        .Background ("#3172d9", "#1860b7")
-
-                                                                )
+                                                         new FlexButton()
+                                                            .Content("로그인"),
+                                                            
+                                                         new FlexPanel ()
+                                                             .Align (AlignContent.Start)
+                                                             .Justify (JustifyContent.SpaceAuto)
+                                                             .AddHeight(13)
+                                                             .Children (
+                                                                 SocialButtonTemplate (IconPathSupport.Google)
+                                                                     .Background (Colors.White)
+                                                                     .HoverBackgroundAnimation ("#cecece", 300),
+                                                                 SocialButtonTemplate (IconPathSupport.Facebook)
+                                                                     .Background ("#3172d9")
+                                                                     .HoverBackgroundAnimation ("#1860b7", 300)
+                                                             ),
+                                                         new FlexPanel ()
+                                                             .Align(AlignContent.End)
+                                                             .Justify (JustifyContent.SpaceAuto)
+                                                             .AddHeight (13)
+                                                             .Children (
+                                                                 SocialButtonTemplate(IconPathSupport.Google)
+                                                                     .Background (Colors.White)
+                                                                     .HoverBackgroundAnimation ("#cecece", 300),
+                                                                 SocialButtonTemplate (IconPathSupport.Facebook)
+                                                                     .Background ("#3172d9")
+                                                                     .HoverBackgroundAnimation ("#1860b7", 300)
+                                                         
+                                                             )
                                                      )
                                              )
                                     )
                             )
                    );
 
+        private FlexButton SocialButtonTemplate(Viewbox Content)
+            => new FlexButton ()
+            {
+                Cursor = Cursors.Hand
+            }
+               .CornerRadius (5)
+               .Width (48)
+               .Height (48)
+               .HoverBackgroundAnimation ("#cecece", 500)
+               .Content (
+                    Content
+                        .Height(18)
+                        .Width(18)
+               );
         private FlexTextBox UserTextBoxTemplate(string waterMarkText)
             => new FlexTextBox ()
                     .WaterMarkText (waterMarkText)
-                    .Background ("#101117")
-                    .BorderBrush ("#696b6f", "#7f8084")
+                    .Background("#101117")
+                    .BorderBrush("#696b6f")
+                    .HoverBorderBrushAnimation ("#7f8084", 100)
+                    .FocusBorderBrushAnimation("#148eff",100)
                     .BorderThickness (1.5)
                     .CornerRadius (3)
                     .Height (33)
