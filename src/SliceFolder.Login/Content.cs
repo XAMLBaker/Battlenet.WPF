@@ -2,7 +2,6 @@
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Login.Components;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace SliceFolder.Login
@@ -76,52 +75,47 @@ namespace SliceFolder.Login
                                                             .FontSize (13)
                                                             .Content ("로그인 상태 유지하기"),
 
-                                                         new DockPanel()
-                                                            .Children(
-                                                                new FlexPanel ()
-                                                                    .SetDock(Dock.Top)
-                                                                    .Align (AlignContent.Start)
-                                                                    .Justify (JustifyContent.SpaceAuto)
-                                                                    .AddHeight(13)
-                                                                    .Children (
-                                                                        new SocialButton (SocialButtonType.GOOGLE)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background (Colors.White, "#cecece"),
+                                                            new FlexPanel ()
+                                                                .Align (AlignContent.Start)
+                                                                .Justify (JustifyContent.SpaceAuto)
+                                                                .AddHeight(13)
+                                                                .Children (
+                                                                    new SocialButton (SocialButtonType.GOOGLE)
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background (Colors.White, "#cecece"),
+                                                                    new SocialButton (SocialButtonType.FACEBOOK)
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background ("#3172d9", "#1860b7"),
                                                                         new SocialButton (SocialButtonType.FACEBOOK)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background ("#3172d9", "#1860b7"),
-                                                                         new SocialButton (SocialButtonType.FACEBOOK)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background ("#3172d9", "#1860b7")
-                                                                     ),
-                                                                 new FlexPanel ()
-                                                                    .SetDock (Dock.Bottom)
-                                                                    .Align(AlignContent.End)
-                                                                    .Justify (JustifyContent.SpaceAuto)
-                                                                    .AddHeight (13)
-                                                                    .Children (
-                                                                        new SocialButton (SocialButtonType.GOOGLE)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background (Colors.White, "#cecece"),
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background ("#3172d9", "#1860b7")
+                                                                ),
+                                                            new FlexPanel ()
+                                                                .Align(AlignContent.End)
+                                                                .Justify (JustifyContent.SpaceAuto)
+                                                                .AddHeight (13)
+                                                                .Children (
+                                                                    new SocialButton (SocialButtonType.GOOGLE)
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background (Colors.White, "#cecece"),
+                                                                    new SocialButton (SocialButtonType.FACEBOOK)
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background ("#3172d9", "#1860b7"),
                                                                         new SocialButton (SocialButtonType.FACEBOOK)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background ("#3172d9", "#1860b7"),
-                                                                         new SocialButton (SocialButtonType.FACEBOOK)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background ("#3172d9", "#1860b7"),
-                                                                         new SocialButton (SocialButtonType.FACEBOOK)
-                                                                            .Width (48)
-                                                                            .Height (48)
-                                                                            .Background ("#3172d9", "#1860b7")
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background ("#3172d9", "#1860b7"),
+                                                                        new SocialButton (SocialButtonType.FACEBOOK)
+                                                                        .Width (48)
+                                                                        .Height (48)
+                                                                        .Background ("#3172d9", "#1860b7")
 
-                                                                     )
-                                                             )
+                                                                )
                                                      )
                                              )
                                     )
