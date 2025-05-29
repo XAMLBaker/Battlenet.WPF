@@ -10,6 +10,9 @@ namespace SliceFolder.Login.Components
     {
         public static Viewbox Google
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                     .Child (
                         new Grid ()
                             .Children (
@@ -40,6 +43,9 @@ namespace SliceFolder.Login.Components
                      );
         public static Viewbox Facebook
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                     .Child (
                         new Path ()
                         {
@@ -50,6 +56,9 @@ namespace SliceFolder.Login.Components
 
         public static Viewbox Apple
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                    .Child (
                         new Path ()
                         {
@@ -59,6 +68,9 @@ namespace SliceFolder.Login.Components
                    );
         public static Viewbox Xbox
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                    .Child (
                         new Path ()
                         {
@@ -68,6 +80,9 @@ namespace SliceFolder.Login.Components
                    );
         public static Viewbox PlayStation
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                    .Child (
                         new Path ()
                         {
@@ -77,6 +92,9 @@ namespace SliceFolder.Login.Components
                    );
         public static Viewbox Nintendo
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                    .Child (
                         new Path ()
                         {
@@ -87,6 +105,9 @@ namespace SliceFolder.Login.Components
 
         public static Viewbox Steam
             => new Viewbox ()
+            {
+                Stretch = Stretch.Fill
+            }
                    .Child (
                         new Path ()
                         {

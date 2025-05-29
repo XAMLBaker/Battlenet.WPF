@@ -1,6 +1,7 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Login.Components;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -75,90 +76,144 @@ namespace SliceFolder.Login
                                                             .FontSize (13)
                                                             .Content ("로그인 상태 유지하기"),
 
-                                                         new FlexButton()
-                                                            .Content("로그인")
-                                                            .FontSize(15)
-                                                            .CornerRadius(5)
-                                                            .Height(40)
-                                                            .Foreground(Colors.White)
-                                                            .Background("#0074e0")
-                                                            .BorderThickness(2)
-                                                            .HoverBorderBrushAnimation("#47a6ff",100),
-                                                         
-                                                         new Grid()
-                                                            .Children(
+                                                         new FlexButton ()
+                                                            .Margin (top: 30)
+                                                            .Content ("로그인")
+                                                            .FontSize (15)
+                                                            .CornerRadius (5)
+                                                            .Height (44)
+                                                            .Foreground (Colors.White)
+                                                            .Background ("#0074e0")
+                                                            .BorderThickness (2)
+                                                            .HoverBorderBrushAnimation ("#47a6ff", 100),
+
+                                                         new Grid ()
+                                                            .Margin (topbottom: 26)
+                                                            .Children (
                                                                 new FlexDivider ()
                                                                     .Thickness (1)
                                                                     .Background ("#3f4147"),
-                                                                new ContentControl()
-                                                                    .Width(100)
-                                                                    .Background("#15171e")
-                                                                    .Content("또는")
-                                                                    .Foreground ("#3f4147")
+                                                                new Label ()
+                                                                    .Width (65)
+                                                                    .Background ("#15171e")
+                                                                    .Content ("또는")
+                                                                    .FontSize (13)
+                                                                    .Foreground ("#696b6f")
+                                                                    .FontWeight (FontWeights.Bold)
                                                                     .HCenter ()
-                                                                    .ContentHCenter()
-                                                             ),                                                      
+                                                                    .ContentHCenter ()
+                                                            ),
 
                                                          new FlexPanel ()
                                                              .Align (AlignContent.Start)
                                                              .Justify (JustifyContent.SpaceAuto)
-                                                             .AddHeight(13)
+                                                             .AddHeight (13)
                                                              .Children (
-                                                                 SocialButtonTemplate (IconPathSupport.Google)
-                                                                     .Background (Colors.White)
-                                                                     .HoverBackgroundAnimation ("#cecece", 300),
-                                                                 SocialButtonTemplate (IconPathSupport.Facebook)
-                                                                     .Background ("#3172d9")
-                                                                     .HoverBackgroundAnimation ("#1860b7", 300),
-                                                                 SocialButtonTemplate (IconPathSupport.Apple)
-                                                                     .Background (Colors.White)
-                                                                     .HoverBackgroundAnimation ("#cecece", 300)
+                                                                 SocialButton (Colors.White, "#cecece", IconPathSupport.Google),
+                                                                 SocialButton ("#3172d9", "#1860b7", IconPathSupport.Facebook),
+                                                                 SocialButton (Colors.White, "#cecece", IconPathSupport.Apple)
                                                              ),
                                                          new FlexPanel ()
-                                                             .Align(AlignContent.End)
+                                                             .Align (AlignContent.End)
                                                              .Justify (JustifyContent.SpaceAuto)
                                                              .AddHeight (13)
                                                              .Children (
-                                                                 SocialButtonTemplate(IconPathSupport.Xbox)
-                                                                     .Background ("#107c10")
-                                                                     .HoverBackgroundAnimation ("#0a4f0a", 300),
-                                                                 SocialButtonTemplate (IconPathSupport.PlayStation)
-                                                                     .Background ("#0070cc")
-                                                                     .HoverBackgroundAnimation ("#1860b7", 300),
-                                                                 SocialButtonTemplate (IconPathSupport.Nintendo)
-                                                                     .Background ("#e60012")
-                                                                     .HoverBackgroundAnimation ("#b3000e", 300),
-                                                                 SocialButtonTemplate (IconPathSupport.Steam)
-                                                                     .Background (Colors.White)
-                                                                     .HoverBackgroundAnimation ("#cecece", 300)
-                                                             )
+                                                                 SocialButton ("#107c10", "#0a4f0a", IconPathSupport.Xbox),
+                                                                 SocialButton ("#0070cc", "#00439c", IconPathSupport.PlayStation),
+                                                                 SocialButton ("#e60012", "#b3000e", IconPathSupport.Nintendo),
+                                                                 SocialButton (Colors.White, "#cecece", IconPathSupport.Steam)
+                                                             ),
+                                                        new FlexPanel()
+                                                            .Orientation(Orientation.Vertical)
+                                                            .Align(AlignContent.Center)
+                                                            .Justify(JustifyContent.SpaceBetween)
+                                                            .Children(
+                                                                new TextBlock ()
+                                                                    .Cursor (Cursors.Hand)
+                                                                    .FontWeight (FontWeights.Bold)
+                                                                    .TextColor ("#146fc5")
+                                                                    .Text ("Battle.net 무료 회원 가입")
+                                                                    .OnHover ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#4792c6");
+                                                                    })
+                                                                    .OnRelease ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#146fc5");
+                                                                    }),
+                                                                new TextBlock ()
+                                                                    .Cursor (Cursors.Hand)
+                                                                    .TextColor ("#146fc5")
+                                                                    .Text ("로그인 문제 해결")
+                                                                    .OnHover ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#4792c6");
+                                                                    })
+                                                                    .OnRelease ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#146fc5");
+                                                                    }),
+                                                                new TextBlock ()
+                                                                    .Cursor (Cursors.Hand)
+                                                                    .TextColor ("#146fc5")
+                                                                    .Text ("탈퇴한 계정 복구")
+                                                                    .OnHover ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#4792c6");
+                                                                    })
+                                                                    .OnRelease ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#146fc5");
+                                                                    }),
+                                                                new TextBlock ()
+                                                                    .Cursor (Cursors.Hand)
+                                                                    .TextColor ("#146fc5")
+                                                                    .Text ("개인정보 처리방침")
+                                                                    .OnHover ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#4792c6");
+                                                                    })
+                                                                    .OnRelease ((el) =>
+                                                                    {
+                                                                        ((TextBlock)el).Foreground.WithAnimation ("#146fc5");
+                                                                    })
+                                                            )
                                                      )
                                              )
                                     )
                             )
                    );
 
-        private FlexButton SocialButtonTemplate(Viewbox Content)
+        private FlexButton SocialButton(string background, string hoverBackground, Viewbox Content) => SocialButton (ColorTool.Get (background), ColorTool.Get (hoverBackground), Content);
+        private FlexButton SocialButton(string background, Color hoverBackground, Viewbox Content) => SocialButton (ColorTool.Get (background), hoverBackground, Content);
+        private FlexButton SocialButton(Color background, string hoverBackground, Viewbox Content) => SocialButton (background, ColorTool.Get (hoverBackground), Content);
+        private FlexButton SocialButton(Color background, Color hoverBackground, Viewbox Content)
             => new FlexButton ()
-              {
-                  Cursor = Cursors.Hand
-              }
-              .CornerRadius (5)
-              .Width (48)
-              .Height (48)
-              .HoverBackgroundAnimation ("#cecece", 500)
-              .Content (
-                  Content
-                      .Height(18)
-                      .Width(18)
-              );
+                  .CornerRadius (5)
+                  .Width (48)
+                  .Height (48)
+                  .Background (background)
+                  .Content (
+                      Content
+                          .Height (18)
+                          .Width (18)
+                  )
+                  .OnHover ((el) =>
+                  {
+                      ((FlexButton)el).Background.WithAnimation (hoverBackground, 200);
+                  })
+                  .OnRelease ((el) =>
+                  {
+                      ((FlexButton)el).Background.WithAnimation (background, 200);
+                  });
+
         private FlexTextBox UserTextBoxTemplate(string waterMarkText)
             => new FlexTextBox ()
                     .WaterMarkText (waterMarkText)
-                    .Background("#101117")
-                    .BorderBrush("#696b6f")
+                    .Background ("#101117")
+                    .BorderBrush ("#696b6f")
                     .HoverBorderBrushAnimation ("#7f8084", 100)
-                    .FocusBorderBrushAnimation("#148eff",100)
+                    .FocusBorderBrushAnimation ("#148eff", 100)
                     .BorderThickness (1.5)
                     .CornerRadius (3)
                     .Height (33)
