@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;
 using System.Windows.Media;

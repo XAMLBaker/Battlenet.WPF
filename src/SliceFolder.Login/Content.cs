@@ -1,7 +1,6 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Login.Components;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -15,7 +14,6 @@ namespace SliceFolder.Login
             this.Width = 364;
             this.Height = 815;
         }
-
         protected override Visual Build()
             => new Grid ()
                   .Background ("#15171e")
@@ -78,8 +76,29 @@ namespace SliceFolder.Login
                                                             .Content ("로그인 상태 유지하기"),
 
                                                          new FlexButton()
-                                                            .Content("로그인"),
-                                                            
+                                                            .Content("로그인")
+                                                            .FontSize(15)
+                                                            .CornerRadius(5)
+                                                            .Height(40)
+                                                            .Foreground(Colors.White)
+                                                            .Background("#0074e0")
+                                                            .BorderThickness(2)
+                                                            .HoverBorderBrushAnimation("#47a6ff",100),
+                                                         
+                                                         new Grid()
+                                                            .Children(
+                                                                new FlexDivider ()
+                                                                    .Thickness (1)
+                                                                    .Background ("#3f4147"),
+                                                                new ContentControl()
+                                                                    .Width(100)
+                                                                    .Background("#15171e")
+                                                                    .Content("또는")
+                                                                    .Foreground ("#3f4147")
+                                                                    .HCenter ()
+                                                                    .ContentHCenter()
+                                                             ),                                                      
+
                                                          new FlexPanel ()
                                                              .Align (AlignContent.Start)
                                                              .Justify (JustifyContent.SpaceAuto)
@@ -90,20 +109,28 @@ namespace SliceFolder.Login
                                                                      .HoverBackgroundAnimation ("#cecece", 300),
                                                                  SocialButtonTemplate (IconPathSupport.Facebook)
                                                                      .Background ("#3172d9")
-                                                                     .HoverBackgroundAnimation ("#1860b7", 300)
+                                                                     .HoverBackgroundAnimation ("#1860b7", 300),
+                                                                 SocialButtonTemplate (IconPathSupport.Apple)
+                                                                     .Background (Colors.White)
+                                                                     .HoverBackgroundAnimation ("#cecece", 300)
                                                              ),
                                                          new FlexPanel ()
                                                              .Align(AlignContent.End)
                                                              .Justify (JustifyContent.SpaceAuto)
                                                              .AddHeight (13)
                                                              .Children (
-                                                                 SocialButtonTemplate(IconPathSupport.Google)
+                                                                 SocialButtonTemplate(IconPathSupport.Xbox)
+                                                                     .Background ("#107c10")
+                                                                     .HoverBackgroundAnimation ("#0a4f0a", 300),
+                                                                 SocialButtonTemplate (IconPathSupport.PlayStation)
+                                                                     .Background ("#0070cc")
+                                                                     .HoverBackgroundAnimation ("#1860b7", 300),
+                                                                 SocialButtonTemplate (IconPathSupport.Nintendo)
+                                                                     .Background ("#e60012")
+                                                                     .HoverBackgroundAnimation ("#b3000e", 300),
+                                                                 SocialButtonTemplate (IconPathSupport.Steam)
                                                                      .Background (Colors.White)
-                                                                     .HoverBackgroundAnimation ("#cecece", 300),
-                                                                 SocialButtonTemplate (IconPathSupport.Facebook)
-                                                                     .Background ("#3172d9")
-                                                                     .HoverBackgroundAnimation ("#1860b7", 300)
-                                                         
+                                                                     .HoverBackgroundAnimation ("#cecece", 300)
                                                              )
                                                      )
                                              )
@@ -113,18 +140,18 @@ namespace SliceFolder.Login
 
         private FlexButton SocialButtonTemplate(Viewbox Content)
             => new FlexButton ()
-            {
-                Cursor = Cursors.Hand
-            }
-               .CornerRadius (5)
-               .Width (48)
-               .Height (48)
-               .HoverBackgroundAnimation ("#cecece", 500)
-               .Content (
-                    Content
-                        .Height(18)
-                        .Width(18)
-               );
+              {
+                  Cursor = Cursors.Hand
+              }
+              .CornerRadius (5)
+              .Width (48)
+              .Height (48)
+              .HoverBackgroundAnimation ("#cecece", 500)
+              .Content (
+                  Content
+                      .Height(18)
+                      .Width(18)
+              );
         private FlexTextBox UserTextBoxTemplate(string waterMarkText)
             => new FlexTextBox ()
                     .WaterMarkText (waterMarkText)
