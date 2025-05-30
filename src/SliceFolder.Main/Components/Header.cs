@@ -2,6 +2,7 @@
 using FlexMVVM.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -44,11 +45,16 @@ namespace SliceFolder.Main.Components
                                        var panel = (FrameworkElement)s;
                                        panel.TransitionYAnimation (0.0, EasingMode.EaseOut, 150);
                                    }),
-
-                               new Button()
-                                   .Width(100),
-                               new Button ()
-                                   .Width (100)
+                                new ToggleButton()
+                                    .Content (
+                                        new HStack()
+                                            .Children(
+                                                new TextBlock(),
+                                                new Button()
+                                                    .Width(50)
+                                                    .Link(VisibilityProperty, "IsChecked")
+                                            )
+                                    )
                            ),
                        new Border()
                           .Child(
