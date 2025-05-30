@@ -1,8 +1,12 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SliceFolder.Main.Components
 {
@@ -17,25 +21,33 @@ namespace SliceFolder.Main.Components
                        new FlexPanel ()
                            .Justify (JustifyContent.SpaceEvenly)
                            .Children (
-                               new HStack ()
+                               new Grid ()
                                    .Children (
-                                       new Grid ()
-                                            .Width (42)
-                                            .Height (42)
-                                            .Background (Colors.Red),
+                                       new HStack()
+                                       {
+                                           IsHitTestVisible = true
+                                       }
+                                        .Children (  
+                                            new Grid ()
+                                                .Width (42)
+                                                .Height (42)
+                                                .Background (Colors.Red),
 
-                                       new Grid ()
-                                            .Width (10)
-                                            .Height (10)
-                                            .Background (Colors.Blue)
+                                            new Grid ()
+                                                .Width (10)
+                                                .Height (10)
+                                                .Background (Colors.Blue)
+                                        )
                                    )
-                                   .OnTapped ((el) =>
+                                   .OnTapped ((s,e) =>
                                    {
-                                       ((HStack)el).TransitionYAnimation (2.0);
+                                       var panel = (FrameworkElement)s;
+                                        panel.TransitionYAnimation (2.0, EasingMode.EaseIn, 150);
                                    })
-                                   .OnTappedRelease ((el) =>
+                                   .OnTappedRelease ((s,e) =>
                                    {
-                                       ((HStack)el).TransitionYAnimation (0.0);
+                                       var panel = (FrameworkElement)s;
+                                       panel.TransitionYAnimation (0.0, EasingMode.EaseOut, 150);
                                    })
                            ),
                        new Border()
