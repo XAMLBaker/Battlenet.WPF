@@ -1,7 +1,6 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Common.Components;
-using SliceFolder.Main.Components;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -11,16 +10,13 @@ namespace SliceFolder.Main
     public partial class Layout : LayoutComponent
     {
         private readonly IWindowManager _windowManager;
-        private readonly RightSideBar _rightSideBar;
 
-        public Layout(IWindowManager windowManager ,RightSideBar rightSideBar)
+        public Layout(IWindowManager windowManager)
         {
             this.Width = 1600;
-            this.Height = 1000;
+            this.Height = 900;
             this.Background = BrushTool.Get ("#15181e");
             this._windowManager = windowManager;
-            this._rightSideBar = rightSideBar;
-            this._rightSideBar.SetDock (Dock.Right);
         }
 
         protected override void OnRender(object sender)

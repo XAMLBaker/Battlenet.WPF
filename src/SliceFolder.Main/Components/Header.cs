@@ -6,7 +6,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace SliceFolder.Main.Components
 {
@@ -18,27 +17,23 @@ namespace SliceFolder.Main.Components
                    .Height (100)
                    .Background (Colors.Green)
                    .Children (
-                       new FlexPanel ()
-                           .Justify (JustifyContent.SpaceEvenly)
+                       new HStack ()
+                           .Spacing(10)
                            .Children (
-                               new Grid ()
-                                   .Children (
-                                       new HStack()
-                                       {
-                                           IsHitTestVisible = true
-                                       }
-                                        .Children (  
-                                            new Grid ()
-                                                .Width (42)
-                                                .Height (42)
-                                                .Background (Colors.Red),
-
-                                            new Grid ()
-                                                .Width (10)
-                                                .Height (10)
-                                                .Background (Colors.Blue)
-                                        )
-                                   )
+                                new HStack()
+                                    .Background(Colors.Transparent)
+                                    .Cursor(Cursors.Hand)
+                                    .Children (  
+                                        new Grid ()
+                                            .Width (42)
+                                            .Height (42)
+                                            .Background (Colors.Red),
+                                       
+                                        new Grid ()
+                                            .Width (10)
+                                            .Height (10)
+                                            .Background (Colors.Blue)
+                                    )
                                    .OnTapped ((s,e) =>
                                    {
                                        var panel = (FrameworkElement)s;
@@ -48,7 +43,12 @@ namespace SliceFolder.Main.Components
                                    {
                                        var panel = (FrameworkElement)s;
                                        panel.TransitionYAnimation (0.0, EasingMode.EaseOut, 150);
-                                   })
+                                   }),
+
+                               new Button()
+                                   .Width(100),
+                               new Button ()
+                                   .Width (100)
                            ),
                        new Border()
                           .Child(
