@@ -14,6 +14,7 @@ public class Module : IModule
     public void Register(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterLayout<Layout> ();
+
         containerRegistry.RegisterLayout<Header> ();
         containerRegistry.RegisterLayout<RightSideBar> ();
         containerRegistry.RegisterLayout<Favorite> ();

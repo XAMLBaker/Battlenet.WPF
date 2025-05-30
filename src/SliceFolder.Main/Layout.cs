@@ -17,6 +17,7 @@ namespace SliceFolder.Main
         {
             this.Width = 1600;
             this.Height = 1000;
+            this.Background = BrushTool.Get ("#15181e");
             this._windowManager = windowManager;
             this._rightSideBar = rightSideBar;
             this._rightSideBar.SetDock (Dock.Right);
@@ -33,6 +34,8 @@ namespace SliceFolder.Main
                 new FlexPanel()
                     .Background("#15181e")
                     .Justify(JustifyContent.End)
+                    .SetDock(Dock.Top)
+                    .Margin(bottom:7)
                     .Children(
                         new WindowButton (WindowButtonType.MINIAML)
                             .Background (Colors.Transparent, "#23252b")
@@ -44,10 +47,7 @@ namespace SliceFolder.Main
                             .Foreground ("#4a4c51", "#ffffff")
                             .Height (23)
                             .Width (37)
-                    ).SetDock(Dock.Top),
-                _rightSideBar.SetDock(Dock.Right),
-                new Header().SetDock(Dock.Top)
-                    .Margin(top:7)
+                    ),
             };
     }
 }
