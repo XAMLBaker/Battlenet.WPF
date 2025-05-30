@@ -1,5 +1,6 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
+using SliceFolder.Common.Components;
 using SliceFolder.Login.Components;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +11,7 @@ namespace SliceFolder.Login
 {
     public class Content : Component
     {
-        public Content()
+        public Content() : base ()
         {
             this.Width = 364;
             this.Height = 815;

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexMVVM.WPF.Markup", "..\.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliceFolder.Login", "SliceFolder.Login\SliceFolder.Login.csproj", "{246A691B-EA62-4BB3-B645-F4B67A6C7515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliceFolder.Common", "SliceFolder.Common\SliceFolder.Common.csproj", "{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{246A691B-EA62-4BB3-B645-F4B67A6C7515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{246A691B-EA62-4BB3-B645-F4B67A6C7515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{246A691B-EA62-4BB3-B645-F4B67A6C7515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

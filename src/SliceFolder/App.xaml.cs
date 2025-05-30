@@ -12,8 +12,10 @@ namespace SliceFolder;
 /// </summary>
 public partial class App : FlexApplication
 {
-    protected override void Render() => flex.Window(()=> new MainWindow())
-                                            .StartWithLayout<Login.Content> ();
+    //protected override void Render() => flex.Window(()=> new MainWindow())
+    //                                        .StartWithLayout<Login.Content> ();
+    protected override void Render() => flex.Window (() => new MainWindow ())
+                                            .StartWithLayout<Main.Home.Content> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
