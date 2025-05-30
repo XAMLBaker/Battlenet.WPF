@@ -11,10 +11,18 @@ namespace SliceFolder.Login
 {
     public class Content : Component
     {
-        public Content() : base ()
+        private readonly IWindowManager _windowManager;
+
+        public Content(IWindowManager windowManager)
         {
             this.Width = 364;
             this.Height = 815;
+            this._windowManager = windowManager;
+        }
+        protected override void OnRender(object sender)
+        {
+            base.OnRender (sender);
+            this._windowManager.CornerRadius (0);
         }
         protected override Visual Build()
             => new Grid ()

@@ -9,7 +9,7 @@ namespace SliceFolder.Main.Home
     {
         private readonly Favorite _favorite;
 
-        public Layout(Favorite favorite) : base()
+        public Layout(Favorite favorite)
         {
             this._favorite = favorite;
         }

@@ -10,33 +10,44 @@ namespace SliceFolder.Main
 {
     public partial class Layout : LayoutComponent
     {
+        private readonly IWindowManager _windowManager;
         private readonly RightSideBar _rightSideBar;
 
-        public Layout(RightSideBar rightSideBar) : base ()
+        public Layout(IWindowManager windowManager ,RightSideBar rightSideBar)
         {
             this.Width = 1600;
             this.Height = 1000;
+            this._windowManager = windowManager;
             this._rightSideBar = rightSideBar;
             this._rightSideBar.SetDock (Dock.Right);
         }
+
+        protected override void OnRender(object sender)
+        {
+            base.OnRender (sender);
+            this._windowManager.CornerRadius (15);
+        }
+
         protected override IEnumerable<UIElement> Build()
             => new List<UIElement>() {
                 new FlexPanel()
+                    .Background("#15181e")
                     .Justify(JustifyContent.End)
                     .Children(
                         new WindowButton (WindowButtonType.MINIAML)
                             .Background (Colors.Transparent, "#23252b")
                             .Foreground ("#4a4c51", "#ffffff")
-                            .Height (22)
+                            .Height (23)
                             .Width (37),
                         new WindowButton (WindowButtonType.EXIT)
                             .Background (Colors.Transparent, "#dd1313")
                             .Foreground ("#4a4c51", "#ffffff")
-                            .Height (22)
+                            .Height (23)
                             .Width (37)
                     ).SetDock(Dock.Top),
                 _rightSideBar.SetDock(Dock.Right),
                 new Header().SetDock(Dock.Top)
+                    .Margin(top:7)
             };
     }
 }
