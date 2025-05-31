@@ -37,6 +37,5 @@ namespace SliceFolder.Main.Components
                                     .Content ("hihi")
                          )
                   );
-
     }
 }
