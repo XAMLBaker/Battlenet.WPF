@@ -86,8 +86,28 @@ namespace SliceFolder.Main.Components
         private GroupButton GroupButtonTemplate(object o)
             => new GroupButton ()
                     .Content (o)
-                    .Foreground (Colors.White)
+                    .Foreground ("#8c8e80")
                     .FontSize (15)
-                    .FontWeight (FontWeights.DemiBold);
+                    .FontWeight (FontWeights.DemiBold)
+                    .OnChecked ((el) =>
+                    {
+                        el.Foreground.WithAnimation (Colors.White);
+                    })
+                    .OnUnchecked ((el) =>
+                    {
+                        el.Foreground.WithAnimation ("#8c8e80");
+                    })
+                    .OnHover ((el) =>
+                    {
+                        if (((GroupButton)el).IsChecked.Value == true)
+                            return;
+                        el.Foreground.WithAnimation (Colors.White);
+                    })
+                    .OnRelease ((el) =>
+                    {
+                        if (((GroupButton)el).IsChecked.Value == true)
+                            return;
+                        el.Foreground.WithAnimation ("#8c8e80");
+                    });
     }
 }

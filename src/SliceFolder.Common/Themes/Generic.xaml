@@ -8,14 +8,23 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:GroupButton}">
-                    <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
-                        <ContentPresenter HorizontalAlignment="Center" />
+                    <DockPanel
+                        Width="{TemplateBinding Width}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter
+                            Width="{TemplateBinding Width}"
+                            HorizontalAlignment="Center"
+                            DockPanel.Dock="Top" />
                         <Border
                             x:Name="bdr"
                             Width="0"
+                            Height="1"
+                            HorizontalAlignment="Center"
                             BorderBrush="#428cf7"
-                            BorderThickness="2" />
-                    </StackPanel>
+                            BorderThickness="2"
+                            DockPanel.Dock="Bottom" />
+                    </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
