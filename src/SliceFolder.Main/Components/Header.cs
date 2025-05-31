@@ -21,41 +21,45 @@ namespace SliceFolder.Main.Components
                    .Background (Colors.Transparent)
                    .Children (
                        new HStack ()
-                           .Spacing(20)
+                       {
+                           Spacing = 20.0
+                       }
+                       .Children (
+                           new HStack ()
+                               .Background(Colors.Transparent)
+                               .Cursor(Cursors.Hand)
+                               .Children (  
+                                   new Grid ()
+                                       .Width (42)
+                                       .Height (42)
+                                       .Background (Colors.Red),
+                                      
+                                   new Grid ()
+                                       .Width (10)
+                                       .Height (10)
+                                       .Background (Colors.Blue)
+                               )
+                               .OnTapped ((s,e) =>
+                               {
+                                   var panel = (FrameworkElement)s;
+                                   panel.TransitionYAnimation (2.0, EasingMode.EaseIn, 150);
+                               })
+                               .OnTappedRelease ((s,e) =>
+                               {
+                                   var panel = (FrameworkElement)s;
+                                   panel.TransitionYAnimation (0.0, EasingMode.EaseOut, 150);
+                               }),
+                           new HStack ()
+                           {
+                               Spacing = 30.0
+                           }
                            .Children (
-                                new HStack ()
-                                    .Background(Colors.Transparent)
-                                    .Cursor(Cursors.Hand)
-                                    .Children (  
-                                        new Grid ()
-                                            .Width (42)
-                                            .Height (42)
-                                            .Background (Colors.Red),
-                                       
-                                        new Grid ()
-                                            .Width (10)
-                                            .Height (10)
-                                            .Background (Colors.Blue)
-                                    )
-                                   .OnTapped ((s,e) =>
-                                   {
-                                       var panel = (FrameworkElement)s;
-                                        panel.TransitionYAnimation (2.0, EasingMode.EaseIn, 150);
-                                   })
-                                   .OnTappedRelease ((s,e) =>
-                                   {
-                                       var panel = (FrameworkElement)s;
-                                       panel.TransitionYAnimation (0.0, EasingMode.EaseOut, 150);
-                                   }),
-                                new HStack ()
-                                    .Spacing(30)
-                                    .Children (
-                                        GroupButtonTemplate ("홈")
-                                            .IsChecked (true),
-                                        GroupButtonTemplate ("게임"),
-                                        GroupButtonTemplate ("샵")
-                                    )
-                           ),
+                                GroupButtonTemplate ("홈")
+                                    .IsChecked (true),
+                                GroupButtonTemplate ("게임"),
+                                GroupButtonTemplate ("샵")
+                            )
+                       ),
                        new Border()
                           .Child(
                               new Viewbox ()

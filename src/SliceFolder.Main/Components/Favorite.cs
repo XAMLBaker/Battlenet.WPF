@@ -1,6 +1,7 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Common.Components;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -12,22 +13,46 @@ namespace SliceFolder.Main.Components
             => new Border ()
                   .Height (56)
                   .CornerRadius (5)
+                  .Padding(leftright: 10)
                   .Background ("#26272f")
                   .Child (
                       new HStack ()
-                         .VCenter()
-                         .Spacing (10)
-                         .Children (
-                                new TextBlock ()
-                                    .Text ("즐겨찾기"),
-                                GameButton (GameIcon.WorldOfCraft),
-                                GameButton (GameIcon.Overwatch),
-                                GameButton (GameIcon.WorldOfCraftClassic),
-                                GameButton (GameIcon.Hearthstone),
-                                GameButton (GameIcon.Diablo3),
-                                GameButton (GameIcon.StarCraft2),
-                                GameButton (GameIcon.StarCraft)
-                         )
+                      {
+                          Spacing = 20
+                      }
+                      .Left().VCenter()
+                      .Children (
+                          new TextBlock ()
+                              .Text ("즐겨찾기")
+                              .VCenter()
+                              .Foreground("#8c8e80")
+                              .FontSize(13)
+                              .FontWeight(FontWeights.Bold),
+                          GameButton (GameIcon.WorldOfCraft
+                                              .Width (35)
+                                              .Height (35)),
+                          GameButton (GameIcon.Overwatch
+                                              .Width (38)
+                                              .Height (38)),
+                          GameButton (GameIcon.WorldOfCraftClassic
+                                              .Width (38)
+                                              .Height (38)),
+                          GameButton (GameIcon.Hearthstone
+                                              .Width (38)
+                                              .Height (38)),
+                          GameButton (GameIcon.Diablo3
+                                              .Width (38)
+                                              .Height (38)),
+                          GameButton (GameIcon.StarCraft2
+                                              .Width (38)
+                                              .Height (38)),
+                          GameButton (GameIcon.StarCraft
+                                              .Width(38)
+                                              .Height(32)),
+                          GameButton (GameIcon.HeroesOfTheStorm
+                                              .Width (32)
+                                              .Height (37))
+                      )
                   );
 
         private GroupButton GameButton(Viewbox content)
@@ -37,22 +62,20 @@ namespace SliceFolder.Main.Components
                     .Background (Colors.Transparent)
                     .Content (
                         content
-                            .Width (40)
-                            .Height (40)
-                            .Margin(top:3)
+                            .Margin (top: 5)
                     )
                     .OnHover ((el) =>
                     {
-                        content.Margin (top: 0);
+                        content.MarginAnimation (top: 0);
                         if (el.IsChecked.Value)
                             return;
                         el.Background("#313338");
                     })
                     .OnRelease ((el) =>
                     {
-                        content.Margin (top: 3);
                         if (el.IsChecked.Value)
                             return;
+                        content.MarginAnimation (top: 5);
                         el.Background(Colors.Transparent);
                     });
     }
