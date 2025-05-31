@@ -9,7 +9,6 @@ namespace SliceFolder.Main.Home
     {
         private readonly Header _header;
         private readonly Favorite _favorite;
-
         public Layout(Header header, Favorite favorite)
         {
             this._header = header;
@@ -20,8 +19,11 @@ namespace SliceFolder.Main.Home
         protected override IEnumerable<UIElement> Build()
             => new List<UIElement> ()
             {
-                this._header.SetDock(Dock.Top),
-                _favorite.SetDock(Dock.Top)
+                 this._header
+                     .SetDock(Dock.Top),
+                this._favorite
+                    .SetDock(Dock.Top)
+                    .Margin(bottom:30)                            
             };
     }
 }

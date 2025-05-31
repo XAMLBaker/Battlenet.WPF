@@ -1,8 +1,9 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
+using FlexMVVM.WPF.Markup.Extentions;
+using SliceFolder.Common.Components;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -15,13 +16,14 @@ namespace SliceFolder.Main.Components
         protected override Visual Build()
             => new FlexPanel ()
                    .Justify (JustifyContent.SpaceBetween)
-                   .Height (100)
-                   .Background (Colors.Green)
+                   .Align(AlignContent.End)
+                   .Height (50)
+                   .Background (Colors.Transparent)
                    .Children (
                        new HStack ()
-                           .Spacing(10)
+                           .Spacing(20)
                            .Children (
-                                new HStack()
+                                new HStack ()
                                     .Background(Colors.Transparent)
                                     .Cursor(Cursors.Hand)
                                     .Children (  
@@ -45,15 +47,13 @@ namespace SliceFolder.Main.Components
                                        var panel = (FrameworkElement)s;
                                        panel.TransitionYAnimation (0.0, EasingMode.EaseOut, 150);
                                    }),
-                                new ToggleButton()
-                                    .Content (
-                                        new HStack()
-                                            .Children(
-                                                new TextBlock(),
-                                                new Button()
-                                                    .Width(50)
-                                                    .Link(VisibilityProperty, "IsChecked")
-                                            )
+                                new HStack ()
+                                    .Spacing(30)
+                                    .Children (
+                                        GroupButtonTemplate ("홈")
+                                            .IsChecked (true),
+                                        GroupButtonTemplate ("게임"),
+                                        GroupButtonTemplate ("샵")
                                     )
                            ),
                        new Border()
@@ -82,5 +82,12 @@ namespace SliceFolder.Main.Components
                               el.Background.WithAnimation (Colors.Transparent,100);
                           })
                    );
+
+        private GroupButton GroupButtonTemplate(object o)
+            => new GroupButton ()
+                    .Content (o)
+                    .Foreground (Colors.White)
+                    .FontSize (15)
+                    .FontWeight (FontWeights.DemiBold);
     }
 }

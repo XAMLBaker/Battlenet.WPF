@@ -1,4 +1,6 @@
-﻿using FlexMVVM.WPF.Markup;
+﻿using FlexMVVM.WPF;
+using FlexMVVM.WPF.Markup;
+using SliceFolder.Common.Components;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -8,8 +10,33 @@ namespace SliceFolder.Main.Components
     {
         protected override Visual Build()
             => new Border ()
-                  .CornerRadius (1)
-                  .Background ("#27252d");
-               
+                  .Height (56)
+                  .CornerRadius (5)
+                  .Background ("#26272f")
+                  .Child (
+                      new VStack ()
+                         .Spacing (10)
+                         .Children (
+                                new TextBlock ()
+                                    .Text ("즐겨찾기"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi"),
+                                new GroupButton ()
+                                    .Content ("hihi")
+                         )
+                  );
+
     }
 }
