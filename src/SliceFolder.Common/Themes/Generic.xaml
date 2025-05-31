@@ -5,26 +5,33 @@
 
 
     <Style TargetType="{x:Type local:GroupButton}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:GroupButton}">
-                    <DockPanel
+                    <Grid
                         Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                         Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
                         <ContentPresenter
                             Width="{TemplateBinding Width}"
                             HorizontalAlignment="Center"
-                            DockPanel.Dock="Top" />
+                            VerticalAlignment="Center" />
                         <Border
                             x:Name="bdr"
+                            Grid.Row="1"
                             Width="0"
-                            Height="1"
+                            Height="2"
                             HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
                             BorderBrush="#428cf7"
-                            BorderThickness="2"
-                            DockPanel.Dock="Bottom" />
-                    </DockPanel>
+                            BorderThickness="2" />
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -20,7 +20,7 @@ namespace SliceFolder.Main.Home
             => new List<UIElement> ()
             {
                  this._header
-                     .SetDock(Dock.Top),
+                    .SetDock(Dock.Top),
                 this._favorite
                     .SetDock(Dock.Top)
                     .Margin(bottom:30)                            
