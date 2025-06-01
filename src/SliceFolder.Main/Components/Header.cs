@@ -1,6 +1,5 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
-using FlexMVVM.WPF.Markup.Extentions;
 using SliceFolder.Common.Components;
 using System.Windows;
 using System.Windows.Controls;

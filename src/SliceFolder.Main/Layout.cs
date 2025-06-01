@@ -1,7 +1,6 @@
 ﻿using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using SliceFolder.Common.Components;
-using SliceFolder.Main.Components;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -44,7 +43,7 @@ namespace SliceFolder.Main
                             .Foreground ("#4a4c51", "#ffffff")
                             .Height (23)
                             .Width (37)
-                    ),
+                    )
             };
     }
 }

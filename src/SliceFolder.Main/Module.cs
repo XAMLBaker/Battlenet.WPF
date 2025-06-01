@@ -1,5 +1,4 @@
 ﻿using FlexMVVM;
-using FlexMVVM.Modularity;
 using SliceFolder.Main.Components;
 
 namespace SliceFolder.Main;
@@ -15,11 +14,12 @@ public class Module : IModule
     {
         containerRegistry.RegisterLayout<Layout> ();
 
-        containerRegistry.RegisterLayout<Header> ();
-        containerRegistry.RegisterLayout<RightSideBar> ();
-        containerRegistry.RegisterLayout<Favorite> ();
+        containerRegistry.RegisterComponent<Header> ();
+        containerRegistry.RegisterComponent<Favorite> ();
+        containerRegistry.RegisterComponent<RightSideBar> ();
 
-        containerRegistry.RegisterLayout<Home.Layout> ();
+
         containerRegistry.RegisterLayout<Home.Content> ();
+        containerRegistry.RegisterLayout<Home.Layout> ();
     }
 }

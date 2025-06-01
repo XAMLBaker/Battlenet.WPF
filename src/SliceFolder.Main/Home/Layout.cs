@@ -17,13 +17,12 @@ namespace SliceFolder.Main.Home
             this.Margin (leftright: 23);
         }
         protected override IEnumerable<UIElement> Build()
-            => new List<UIElement> ()
-            {
-                 this._header
-                    .SetDock(Dock.Top),
-                this._favorite
-                    .SetDock(Dock.Top)
-                    .Margin(bottom:30)                            
-            };
+            => new List<UIElement> (){
+                        _header
+                            .SetDock (Dock.Top),
+                        _favorite
+                            .SetDock (Dock.Top)
+                            .Margin (bottom: 30)
+                   };
     }
 }

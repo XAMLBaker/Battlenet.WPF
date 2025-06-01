@@ -1,6 +1,4 @@
 ﻿using FlexMVVM;
-using FlexMVVM.Modularity;
-
 namespace SliceFolder.Login
 {
     public class Module : IModule

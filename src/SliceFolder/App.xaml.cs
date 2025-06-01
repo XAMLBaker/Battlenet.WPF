@@ -1,5 +1,4 @@
 ﻿using FlexMVVM;
-using FlexMVVM.Modularity;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Diagnostics;
