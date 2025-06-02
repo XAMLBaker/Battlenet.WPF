@@ -21,5 +21,9 @@ public class Module : IModule
 
         containerRegistry.RegisterLayout<Home.Content> ();
         containerRegistry.RegisterLayout<Home.Layout> ();
+
+        containerRegistry.RegisterLayout<Game.Content> ();
+        containerRegistry.RegisterLayout<Game.Layout> ();
+        containerRegistry.RegisterLayout<Game.Components.LeftSideBar> ();
     }
 }
