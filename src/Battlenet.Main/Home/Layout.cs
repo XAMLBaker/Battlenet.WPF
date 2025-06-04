@@ -1,0 +1,28 @@
+﻿using FlexMVVM.WPF.Markup;
+using Battlenet.Main.Components;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace Battlenet.Main.Home
+{
+    public partial class Layout : LayoutComponent
+    {
+        private readonly Header _header;
+        private readonly Favorite _favorite;
+        public Layout(Header header, Favorite favorite)
+        {
+            this._header = header;
+            this._favorite = favorite;
+
+            this.Margin (leftright: 23);
+        }
+        protected override IEnumerable<UIElement> Build()
+            => new List<UIElement> (){
+                        _header
+                            .SetDock (Dock.Top),
+                        _favorite
+                            .SetDock (Dock.Top)
+                            .Margin (bottom: 30)
+                   };
+    }
+}
