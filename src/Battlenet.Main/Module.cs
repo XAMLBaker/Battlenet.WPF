@@ -26,5 +26,6 @@ public class Module : IModule
 
         containerRegistry.RegisterComponent<Game.MyGames.Content> ();
         containerRegistry.RegisterComponent<Game.Installed.Content> ();
+        containerRegistry.RegisterComponent<Game.AllGames.Content> ();
     }
 }
