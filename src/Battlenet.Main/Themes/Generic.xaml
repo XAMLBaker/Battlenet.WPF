@@ -4,5 +4,7 @@
     xmlns:local="clr-namespace:Battlenet.Main">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/TabItem.xaml" />
+        <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/GameCard.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>

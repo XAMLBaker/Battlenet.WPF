@@ -17,9 +17,9 @@ namespace Battlenet.Main.Home
             this._container = container;
         }
 
-        public override void RegionAttached()
+        public override void RegionAttached(object argu)
         {
-            base.RegionAttached ();
+            base.RegionAttached (argu);
 
             RegionManager.Attach ("SubHeader", this._container.Resolve<Favorite> ());
             RegionManager.Attach ("Content", this);

@@ -1,5 +1,7 @@
 ﻿using FlexMVVM;
 using Battlenet.Main.Components;
+using Microsoft.Extensions.DependencyInjection;
+using Battlenet.Service;
 
 namespace Battlenet.Main;
 
@@ -27,5 +29,8 @@ public class Module : IModule
         containerRegistry.RegisterComponent<Game.MyGames.Content> ();
         containerRegistry.RegisterComponent<Game.Installed.Content> ();
         containerRegistry.RegisterComponent<Game.AllGames.Content> ();
+
+
+        containerRegistry.Services.AddTransient<BattlenetGameLoad> ();
     }
 }

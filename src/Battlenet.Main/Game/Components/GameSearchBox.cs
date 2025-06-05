@@ -14,7 +14,6 @@ namespace Battlenet.Main.Game.Components
         [ObservableProperty] Geometry searchModeShape;
         [ObservableProperty] bool isSearchMode = false;
         [ObservableProperty] string searchText;
-
         public GameSearchBox()
         {
             SearchWait ();

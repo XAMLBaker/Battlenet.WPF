@@ -1,5 +1,9 @@
-﻿using FlexMVVM.WPF;
+﻿using Battlenet.Main.Game.Models;
+using Battlenet.Service;
+using CommunityToolkit.Mvvm.ComponentModel;
+using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -8,11 +12,32 @@ namespace Battlenet.Main.Game.Components
     public partial class LeftSideBar : Component
     {
         private readonly ILayoutNavigator _layoutNavigator;
+        private readonly BattlenetGameLoad _battlenetGameLoad;
         public Action<String> Title { get; set; }
+        [ObservableProperty] private ObservableCollection<GameDataModel> gameDataModels;
+        [ObservableProperty] ObservableCollection<GameDataModel> mobileGame;
 
-        public LeftSideBar(ILayoutNavigator layoutNavigator)
+        public LeftSideBar(ILayoutNavigator layoutNavigator,
+                           BattlenetGameLoad battlenetGameLoad)
         {
             this._layoutNavigator = layoutNavigator;
+            this._battlenetGameLoad = battlenetGameLoad;
+            GameDataModels = new ();
+            MobileGame = new ();
+        }
+
+        public void LoadGameData()
+        {
+            GameDataModels.Clear ();
+            Task.Run (async () =>
+            {
+                var datas = await this._battlenetGameLoad.Load ();
+                foreach (var data in datas)
+                {
+                    GameDataModels.Add (new GameDataModel (data));
+                }
+                MobileGame = new (GameDataModels.Where (x => x.IsMobile));
+            });
         }
 
         protected override Visual Build()
@@ -24,19 +49,22 @@ namespace Battlenet.Main.Game.Components
                                   .Margin(topbottom:10)
                                   .Background ("#31363f"), row: 1)
                     .AddChild (TabItemTemplate ("My Games")
+                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
                                     .OnCheckedAsync(async()=>
                                     {
                                         Title?.Invoke ("My Games");
-                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/MyGames");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/MyGames", GameDataModels);
                                     })
                                     .IsChecked (true), row: 2)
                     .AddChild (TabItemTemplate ("Installed")
+                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
                                     .OnCheckedAsync (async () =>
                                     {
                                         Title?.Invoke ("Installed");
-                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/Installed");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/Installed", GameDataModels);
                                     }), row: 3)
                     .AddChild (TabItemTemplate ("Favorites")
+                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
                                     .OnChecked (() =>
                                     {
                                         Title?.Invoke ("Favorites");
@@ -45,30 +73,35 @@ namespace Battlenet.Main.Game.Components
                                   .Margin (topbottom: 10)
                                   .Background ("#31363f"), row: 5)
                     .AddChild (TabItemTemplate ("All Games")
+                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
                                      .OnCheckedAsync (async () =>
                                      {
                                         Title?.Invoke ("All Games");
-                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/AllGames");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/AllGames", GameDataModels);
 
                                     }), row: 6)
                     .AddChild (TabItemTemplate ("Start For Free")
+                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
                                     .OnChecked (() =>
                                     {
                                         Title?.Invoke ("Start For Free");
                                     }), row: 7)
                     .AddChild (TabItemTemplate ("Mobile")
-                                    .OnChecked (() =>
+                                    .Link (TabItem.CountProperty, "MobileGame.Count")
+                                    .OnCheckedAsync (async () =>
                                     {
                                         Title?.Invoke ("Mobile");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/Mobile", MobileGame);
                                     }), row: 8)
                     .AddChild (TabItemTemplate ("MacOS")
+                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
                                     .OnChecked (() =>
                                     {
                                         Title?.Invoke ("MacOS");
                                     }), row: 9);
 
         private TabItem TabItemTemplate(string name)
-            => new TabItem ()                  
+            => new TabItem ()
                     .Content (
                         new Label()
                             .Foreground(Colors.White)

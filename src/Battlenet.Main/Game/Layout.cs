@@ -1,4 +1,5 @@
 ﻿using Battlenet.Main.Game.Components;
+using Battlenet.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
@@ -10,23 +11,21 @@ namespace Battlenet.Main.Game
 {
     public partial class Layout : Component
     {
-        private readonly ILayoutNavigator _layoutNavigator;
         private readonly LeftSideBar _leftSideBar;
         [ObservableProperty] string tabTitle = null;
-        public Layout(ILayoutNavigator layoutNavigator)
+        public Layout(ILayoutNavigator layoutNavigator,
+                      BattlenetGameLoad battlenetGameLoad)
         {
-            this._layoutNavigator = layoutNavigator;
-            _leftSideBar = new LeftSideBar (this._layoutNavigator);
-
+            _leftSideBar = new LeftSideBar (layoutNavigator, battlenetGameLoad);
             _leftSideBar.Title += (string s) =>
             {
                 TabTitle = s;
             };
         }
 
-        public override void RegionAttached()
+        public override void RegionAttached(object argu)
         {
-            base.RegionAttached ();
+            base.RegionAttached (argu);
 
             RegionManager.Attach ("Content", this);
         }
@@ -35,9 +34,8 @@ namespace Battlenet.Main.Game
         {
             base.OnLoaded (sender, e);
 
-
+            _leftSideBar.LoadGameData ();
         }
-
 
         protected override void InitilzedForms()
         {

@@ -1,5 +1,6 @@
 ﻿using Battlenet.Common.Components;
 using Battlenet.Main.Components;
+using DryIoc;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;
@@ -22,9 +23,9 @@ namespace Battlenet.Main
             this._layoutNavigator = layoutNavigator;
         }
 
-        public override void RegionAttached()
+        public override void RegionAttached(object argu)
         {
-            base.RegionAttached ();
+            base.RegionAttached (argu);
 
             RegionManager.Attach ("root", this);
         }

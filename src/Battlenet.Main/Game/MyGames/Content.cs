@@ -7,9 +7,9 @@ namespace Battlenet.Main.Game.MyGames;
 
 public partial class Content : Component
 {
-    public override void RegionAttached()
+    public override void RegionAttached(object argu)
     {
-        base.RegionAttached ();
+        base.RegionAttached (argu);
 
         RegionManager.Attach ("GameContent", this);
     }

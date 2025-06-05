@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlenet.Login", "Battlene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlenet.Common", "Battlenet.Common\Battlenet.Common.csproj", "{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattlenetUnitTest", "BattlenetUnitTest\BattlenetUnitTest.csproj", "{DDFE8FB4-A177-485A-A7F1-A89F1E6DAD6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlenet.Service", "Battlenet.Service\Battlenet.Service.csproj", "{2C7231EB-050D-456A-AA84-C7AAAC0AD118}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4ABBDF3-F1A4-497B-B1EF-E515D1036B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDFE8FB4-A177-485A-A7F1-A89F1E6DAD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFE8FB4-A177-485A-A7F1-A89F1E6DAD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFE8FB4-A177-485A-A7F1-A89F1E6DAD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFE8FB4-A177-485A-A7F1-A89F1E6DAD6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
