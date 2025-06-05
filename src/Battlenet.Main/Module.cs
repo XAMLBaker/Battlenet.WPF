@@ -19,13 +19,12 @@ public class Module : IModule
         containerRegistry.RegisterComponent<RightSideBar> ();
 
 
-        containerRegistry.RegisterLayout<Home.Content> ();
-        containerRegistry.RegisterLayout<Home.Layout> ();
+        containerRegistry.RegisterComponent<Home.Content> ();
 
         containerRegistry.RegisterLayout<Game.Layout> ();
-        containerRegistry.RegisterLayout<Game.Components.LeftSideBar> ();
+        containerRegistry.RegisterComponent<Game.Components.LeftSideBar> ();
 
-        containerRegistry.RegisterLayout<Game.MyGames.Content> ();
-        containerRegistry.RegisterLayout<Game.Installed.Content> ();
+        containerRegistry.RegisterComponent<Game.MyGames.Content> ();
+        containerRegistry.RegisterComponent<Game.Installed.Content> ();
     }
 }

@@ -1,4 +1,5 @@
-﻿using FlexMVVM.WPF.Markup;
+﻿using FlexMVVM.WPF;
+using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -6,6 +7,12 @@ namespace Battlenet.Main.Game.MyGames;
 
 public partial class Content : Component
 {
+    public override void RegionAttached()
+    {
+        base.RegionAttached ();
+
+        RegionManager.Attach ("GameContent", this);
+    }
     protected override Visual Build()
         => new Grid ().Background (Colors.Blue);
 }

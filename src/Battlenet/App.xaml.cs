@@ -14,7 +14,7 @@ public partial class App : FlexApplication
     //protected override void Render() => flex.Window(()=> new MainWindow())
     //                                        .StartWithLayout<Login.Content> ();
     protected override void Render() => flex.Window (() => new MainWindow ())
-                                            .StartWithLayout<Main.Game.MyGames.Content> ();
+                                            .StartWithLayout<Layout> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
@@ -24,6 +24,7 @@ public partial class App : FlexApplication
 
     protected override void Register(IContainerRegistry containerRegistry)
     {
+        containerRegistry.RegisterLayout<Layout> ();
     }
 
     protected override void OnInitialized()

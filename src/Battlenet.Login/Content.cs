@@ -12,13 +12,17 @@ namespace Battlenet.Login
     public class Content : Component
     {
         private readonly IWindowManager _windowManager;
+        private readonly ILayoutNavigator _layoutNavigator;
 
-        public Content(IWindowManager windowManager)
+        public Content(IWindowManager windowManager,
+                       ILayoutNavigator layoutNavigator)
         {
             this.Width = 364;
             this.Height = 815;
             this._windowManager = windowManager;
+            this._layoutNavigator = layoutNavigator;
         }
+
         protected override void OnRender(object sender)
         {
             base.OnRender (sender);
@@ -102,6 +106,10 @@ namespace Battlenet.Login
                                                             .OnRelease ((el) =>
                                                             {
                                                                 ((FlexButton)el).BorderBrush.WithAnimation (Colors.Transparent, 200);
+                                                            })
+                                                            .OnTapped (() =>
+                                                            {
+                                                                this._layoutNavigator.NavigateToAsync ("/Battlenet.Main/Home");
                                                             }),
 
                                                          new Grid ()

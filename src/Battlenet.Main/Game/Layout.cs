@@ -1,26 +1,28 @@
-﻿using FlexMVVM.WPF.Markup;
-using Battlenet.Main.Components;
-using Battlenet.Main.Game.Components;
+﻿using Battlenet.Main.Game.Components;
+using FlexMVVM.WPF;
+using FlexMVVM.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Battlenet.Main.Game
 {
-    public partial class Layout : LayoutComponent
+    public partial class Layout : Component
     {
-        private readonly Header _header;
-        private readonly Favorite _favorite;
-        private readonly LeftSideBar _leftSideBar;
+        private readonly ILayoutNavigator _layoutNavigator;
 
-        public Layout(Header header, Favorite favorite, LeftSideBar leftSideBar)
+        public Layout(ILayoutNavigator layoutNavigator)
         {
-            this._header = header;
-            this._favorite = favorite;
-            this._leftSideBar = leftSideBar;
-            this.Margin (leftright: 23);
-            this.ClipToBounds = false;
+            this._layoutNavigator = layoutNavigator;
         }
+
+        public override void RegionAttached()
+        {
+            base.RegionAttached ();
+
+            RegionManager.Attach ("Content", this);
+        }
+
         protected override void InitilzedForms()
         {
             this.Background (new RadialGradientBrush (new GradientStopCollection (new List<GradientStop>
@@ -34,17 +36,14 @@ namespace Battlenet.Main.Game
             });
         }
 
-        protected override IEnumerable<UIElement> Build()
-            => new List<UIElement> (){
-                        _header
-                            .SetDock (Dock.Top),
-                        _favorite
-                            .SetDock (Dock.Top)
-                            .Margin (bottom: 30),
-                         this._leftSideBar
-                            .SetDock(Dock.Left)
-                            .Margin(right: 33)
-                            .Top()
-                   };
+        protected override Visual Build()
+            => new DockPanel()
+                .Children(
+                    new LeftSideBar (this._layoutNavigator)
+                            .SetDock (Dock.Left)
+                            .Margin (right: 33)
+                            .Top (),
+                    new FlexRegion("GameContent")
+                );
     }
 }

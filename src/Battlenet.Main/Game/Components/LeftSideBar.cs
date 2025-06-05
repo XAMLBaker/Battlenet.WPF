@@ -23,14 +23,14 @@ namespace Battlenet.Main.Game.Components
                                   .Margin(topbottom:10)
                                   .Background ("#31363f"), row: 1)
                     .AddChild (TabItemTemplate ("My Games")
-                                    .OnChecked(()=>
+                                    .OnCheckedAsync(async()=>
                                     {
-                                        this._layoutNavigator.NavigateTo ("/Battlenet/Main/Game/MyGames");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/MyGames");
                                     }), row: 2)
                     .AddChild (TabItemTemplate ("Installed")
-                                    .OnChecked (() =>
+                                    .OnCheckedAsync (async () =>
                                     {
-                                        this._layoutNavigator.NavigateTo ("/Battlenet/Main/Game/Installed");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/Installed");
                                     }), row: 3)
                     .AddChild (TabItemTemplate ("Favorites")
                                     .OnChecked (() =>

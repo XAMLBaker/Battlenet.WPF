@@ -12,6 +12,12 @@ namespace Battlenet.Main.Components
 {
     public partial class Header : Component
     {
+        private readonly ILayoutNavigator _layoutNavigator;
+
+        public Header(ILayoutNavigator layoutNavigator)
+        {
+            this._layoutNavigator = layoutNavigator;
+        }
         protected override Visual Build()
             => new FlexPanel ()
                    .Justify (JustifyContent.SpaceBetween)
@@ -53,10 +59,21 @@ namespace Battlenet.Main.Components
                                Spacing = 30.0
                            }
                            .Children (
-                                GroupButtonTemplate ("홈")
-                                    .IsChecked (true),
-                                GroupButtonTemplate ("게임"),
-                                GroupButtonTemplate ("샵")
+                                GroupButtonTemplate ("HOME")
+                                    .IsChecked (true)
+                                    .OnCheckedAsync (async () =>
+                                    {
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Home");
+                                    }),
+                                GroupButtonTemplate ("GAME")
+                                   .OnCheckedAsync (async () =>
+                                   {
+                                       await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/MyGames");
+                                    }),
+                                GroupButtonTemplate ("SHOP")
+                                    .OnChecked (() =>
+                                    {
+                                    })
                             )
                        ),
                        new Border()
