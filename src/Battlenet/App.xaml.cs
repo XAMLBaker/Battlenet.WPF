@@ -13,18 +13,12 @@ public partial class App : FlexApplication
 {
     //protected override void Render() => flex.Window(()=> new MainWindow())
     //                                        .StartWithLayout<Login.Content> ();
-    protected override void Render() => flex.Window (() => new MainWindow ())
-                                            .StartWithLayout<Layout> ();
+    protected override void Render() => flex.StartWithLayout<Login.Module> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
         moduleCatalog.AddModule<Login.Module> ();
         moduleCatalog.AddModule<Main.Module> ();
-    }
-
-    protected override void Register(IContainerRegistry containerRegistry)
-    {
-        containerRegistry.RegisterLayout<Layout> ();
     }
 
     protected override void OnInitialized()

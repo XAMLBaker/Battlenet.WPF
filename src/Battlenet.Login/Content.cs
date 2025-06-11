@@ -23,6 +23,11 @@ namespace Battlenet.Login
             this._layoutNavigator = layoutNavigator;
         }
 
+        public override void RegionAttached(object argu = null)
+        {
+            RegionManager.Attach ("Root", this);
+        }
+
         protected override void OnRender(object sender)
         {
             base.OnRender (sender);
@@ -109,7 +114,7 @@ namespace Battlenet.Login
                                                             })
                                                             .OnTapped (() =>
                                                             {
-                                                                this._layoutNavigator.NavigateToAsync ("/Battlenet.Main/Home");
+                                                                this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Home");
                                                             }),
 
                                                          new Grid ()

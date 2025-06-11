@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -40,6 +41,19 @@ namespace Battlenet.Main.Game.Components
             });
         }
 
+        protected override void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            base.OnLoaded (sender, e);
+
+            this.LoadGameData ();
+        }
+
+        public LeftSideBar UpdateTile(Action<string> actions)
+        {
+            Title = actions;
+            return this;
+        }
+
         protected override Visual Build()
             => new Grid ()
                     .Columns ("*")
@@ -65,9 +79,10 @@ namespace Battlenet.Main.Game.Components
                                     }), row: 3)
                     .AddChild (TabItemTemplate ("Favorites")
                                     .Link (TabItem.CountProperty, "GameDataModels.Count")
-                                    .OnChecked (() =>
-                                    {
-                                        Title?.Invoke ("Favorites");
+                                     .OnCheckedAsync (async () =>
+                                     {
+                                         Title?.Invoke ("Favorites");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/Favorites", GameDataModels);
                                     }), row: 4)
                     .AddChild (new FlexDivider ()
                                   .Margin (topbottom: 10)
@@ -82,9 +97,10 @@ namespace Battlenet.Main.Game.Components
                                     }), row: 6)
                     .AddChild (TabItemTemplate ("Start For Free")
                                     .Link (TabItem.CountProperty, "GameDataModels.Count")
-                                    .OnChecked (() =>
-                                    {
-                                        Title?.Invoke ("Start For Free");
+                                     .OnCheckedAsync (async () =>
+                                     {
+                                         Title?.Invoke ("Start For Free");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/StartForFree", GameDataModels);
                                     }), row: 7)
                     .AddChild (TabItemTemplate ("Mobile")
                                     .Link (TabItem.CountProperty, "MobileGame.Count")
@@ -95,9 +111,10 @@ namespace Battlenet.Main.Game.Components
                                     }), row: 8)
                     .AddChild (TabItemTemplate ("MacOS")
                                     .Link (TabItem.CountProperty, "GameDataModels.Count")
-                                    .OnChecked (() =>
-                                    {
-                                        Title?.Invoke ("MacOS");
+                                     .OnCheckedAsync (async () =>
+                                     {
+                                         Title?.Invoke ("MacOS");
+                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/MacOS", GameDataModels);
                                     }), row: 9);
 
         private TabItem TabItemTemplate(string name)

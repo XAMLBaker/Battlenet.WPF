@@ -11,16 +11,14 @@ namespace Battlenet.Main.Game
 {
     public partial class Layout : Component
     {
-        private readonly LeftSideBar _leftSideBar;
+        private readonly ILayoutNavigator _layoutNavigator;
+        private readonly BattlenetGameLoad _battlenetGameLoad;
         [ObservableProperty] string tabTitle = null;
         public Layout(ILayoutNavigator layoutNavigator,
                       BattlenetGameLoad battlenetGameLoad)
         {
-            _leftSideBar = new LeftSideBar (layoutNavigator, battlenetGameLoad);
-            _leftSideBar.Title += (string s) =>
-            {
-                TabTitle = s;
-            };
+            this._layoutNavigator = layoutNavigator;
+            this._battlenetGameLoad = battlenetGameLoad;
         }
 
         public override void RegionAttached(object argu)
@@ -28,13 +26,6 @@ namespace Battlenet.Main.Game
             base.RegionAttached (argu);
 
             RegionManager.Attach ("Content", this);
-        }
-
-        protected override void OnLoaded(object sender, RoutedEventArgs e)
-        {
-            base.OnLoaded (sender, e);
-
-            _leftSideBar.LoadGameData ();
         }
 
         protected override void InitilzedForms()
@@ -53,21 +44,34 @@ namespace Battlenet.Main.Game
         protected override Visual Build()
             => new DockPanel()
                 .Children(
-                    _leftSideBar.SetDock (Dock.Left)
+                     new LeftSideBar (_layoutNavigator, _battlenetGameLoad)
+                                .SetDock (Dock.Left)
                                 .Margin (right: 33)
+                                .UpdateTile (s =>
+                                {
+                                    TabTitle = s;
+                                })
                                 .Top (),
                     new VStack()
+                        .Top ()
                         .Children(
                             new HStack ()
+                                .Left ()
+                                .Margin(bottom: 16)
                                 .Children (
                                     new TextBlock ()
+                                        .FontSize(24)
+                                        .FontWeight(FontWeights.Bold)
                                         .Link(nameof(TabTitle))
                                         .Foreground (Colors.White),
                                     new TextBlock ()
                                         .Text ("Sort by:")
 
                                 ),
-                            new FlexRegion("GameContent")
+                            new FlexRegion ("GameContent")
+                            {
+                                Transition = TransitionType.Fade
+                            }
                         )
                 );
     }

@@ -27,7 +27,7 @@ namespace Battlenet.Main
         {
             base.RegionAttached (argu);
 
-            RegionManager.Attach ("root", this);
+            RegionManager.Attach ("Root", this);
         }
         protected override void OnRender(object sender)
         {
@@ -67,7 +67,8 @@ namespace Battlenet.Main
                                             new Header (this._layoutNavigator)
                                                 .SetDock(Dock.Top),
                                             new FlexRegion("SubHeader")
-                                                .SetDock (Dock.Top),
+                                                .SetDock (Dock.Top)
+                                                .Margin(bottom: 40),
                                             new FlexRegion("Content")
                                         )
                                 )

@@ -28,7 +28,10 @@ public class Module : IModule
 
         containerRegistry.RegisterComponent<Game.MyGames.Content> ();
         containerRegistry.RegisterComponent<Game.Installed.Content> ();
+        containerRegistry.RegisterComponent<Game.Favorites.Content> ();
         containerRegistry.RegisterComponent<Game.AllGames.Content> ();
+        containerRegistry.RegisterComponent<Game.Mobile.Content> ();
+        containerRegistry.RegisterComponent<Game.MacOS.Content> ();
 
 
         containerRegistry.Services.AddTransient<BattlenetGameLoad> ();

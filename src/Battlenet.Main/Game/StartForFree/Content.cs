@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Battlenet.Main.Game.MyGames;
+namespace Battlenet.Main.Game.StartForFree;
 
 public partial class Content : Component
 {
