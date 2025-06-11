@@ -1,6 +1,5 @@
 ﻿using Battlenet.Common.Components;
 using Battlenet.Main.Components;
-using DryIoc;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;

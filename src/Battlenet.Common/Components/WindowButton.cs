@@ -35,7 +35,7 @@ namespace Battlenet.Common.Components
                             .Child (
                                 new Path ()
                                 {
-                                    Data = PathExtentions.Data(ButtonType)
+                                    Data = PathExtensions.Data(ButtonType)
                                 }
                                 .Link (Shape.FillProperty, nameof (Foreground), this)
                             )

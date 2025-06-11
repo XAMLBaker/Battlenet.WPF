@@ -11,5 +11,10 @@ namespace Battlenet.Login
         {
             containerRegistry.RegisterComponent<Content> ();
         }
+
+        public void ViewModelMapper(IViewModelMapper modelMapper)
+        {
+
+        }
     }
 }
