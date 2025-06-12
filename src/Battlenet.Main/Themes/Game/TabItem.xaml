@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:component="clr-namespace:Battlenet.Main.Game.Components">
+    xmlns:component="clr-namespace:Battlenet.Main.Games.Components">
 
     <Style TargetType="{x:Type component:TabItem}">
         <Setter Property="Cursor" Value="Hand" />

@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Game\Mobile\" />
     <Folder Include="Shop\" />
   </ItemGroup>
 

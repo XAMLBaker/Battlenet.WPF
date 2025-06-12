@@ -1,6 +1,6 @@
-﻿using FlexMVVM.WPF;
+﻿using Battlenet.Common.Components;
+using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
-using Battlenet.Common.Components;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -43,12 +43,12 @@ namespace Battlenet.Main.Components
                                     .IsChecked (true)
                                     .OnCheckedAsync (async () =>
                                     {
-                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Home");
+                                        await this._layoutNavigator.NavigateToAsync (RouteNames.Home);
                                     }),
-                                GroupButtonTemplate ("GAME")
+                                GroupButtonTemplate ("GAMES")
                                     .OnCheckedAsync (async () =>
                                     {
-                                        await this._layoutNavigator.NavigateToAsync ("/Battlenet/Main/Game/MyGames");
+                                        await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/MyGames");
                                     }),
                                 GroupButtonTemplate ("SHOP")
                                     .OnChecked (() =>

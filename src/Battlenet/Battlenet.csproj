@@ -11,6 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
     <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF\FlexMVVM.WPF.csproj" />
+    <ProjectReference Include="..\Battlenet.Common\Battlenet.Common.csproj" />
+    <ProjectReference Include="..\Battlenet.Game\Battlenet.Game.csproj" />
     <ProjectReference Include="..\Battlenet.Login\Battlenet.Login.csproj" />
     <ProjectReference Include="..\Battlenet.Main\Battlenet.Main.csproj" />
   </ItemGroup>

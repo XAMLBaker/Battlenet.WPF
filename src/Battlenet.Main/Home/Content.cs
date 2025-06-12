@@ -1,4 +1,4 @@
-﻿using Battlenet.Main.Components;
+﻿using Battlenet.Common.Components;
 using DryIoc;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
@@ -20,7 +20,6 @@ namespace Battlenet.Main.Home
         public override void RegionAttached(object argu)
         {
             base.RegionAttached (argu);
-
             RegionManager.Attach ("SubHeader", this._container.Resolve<Favorite> ());
             RegionManager.Attach ("Content", this);
         }
@@ -32,6 +31,7 @@ namespace Battlenet.Main.Home
 
         protected override Visual Build()
             => new Grid ()
+                    .Margin(top: 150)
                     .Background (Colors.Red);
     }
 }

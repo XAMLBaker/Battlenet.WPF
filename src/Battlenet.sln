@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattlenetUnitTest", "Battle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlenet.Service", "Battlenet.Service\Battlenet.Service.csproj", "{2C7231EB-050D-456A-AA84-C7AAAC0AD118}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlenet.Game", "Battlenet.Game\Battlenet.Game.csproj", "{3E0E3416-8543-43C1-A6AD-84BE0DA00E16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C7231EB-050D-456A-AA84-C7AAAC0AD118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0E3416-8543-43C1-A6AD-84BE0DA00E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0E3416-8543-43C1-A6AD-84BE0DA00E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0E3416-8543-43C1-A6AD-84BE0DA00E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0E3416-8543-43C1-A6AD-84BE0DA00E16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

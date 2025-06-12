@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\OverWatch2.png" />
+    <None Remove="Resources\StarCraft.png" />
+    <None Remove="Resources\WarCraft.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\OverWatch2.png" />
+    <Resource Include="Resources\StarCraft.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
+    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF\FlexMVVM.WPF.csproj" />
+    <ProjectReference Include="..\..\..\FlexMVVM\src\FlexMVVM\FlexMVVM.csproj" />
+    <ProjectReference Include="..\Battlenet.Common\Battlenet.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\WarCraft.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="StarCraft\Content.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OverWatch\Content.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

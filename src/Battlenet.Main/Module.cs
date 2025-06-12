@@ -15,20 +15,17 @@ public class Module : IModule
     public void Register(IContainerRegistry containerRegistry)
     {
         containerRegistry.RegisterComponent<Layout> ();
-
-        containerRegistry.RegisterComponent<Header> ();
-        containerRegistry.RegisterComponent<Favorite> ();
         containerRegistry.RegisterComponent<RightSideBar> ();
 
         containerRegistry.RegisterComponent<Home.Content> ();
 
-        containerRegistry.RegisterComponent<Game.Layout> ();
-        containerRegistry.RegisterComponent<Game.MyGames.Content> ();
-        containerRegistry.RegisterComponent<Game.Installed.Content> ();
-        containerRegistry.RegisterComponent<Game.Favorites.Content> ();
-        containerRegistry.RegisterComponent<Game.AllGames.Content> ();
-        containerRegistry.RegisterComponent<Game.Mobile.Content> ();
-        containerRegistry.RegisterComponent<Game.MacOS.Content> ();
+        containerRegistry.RegisterComponent<Games.Layout> ();
+        containerRegistry.RegisterComponent<Games.MyGames.Content> ();
+        containerRegistry.RegisterComponent<Games.Installed.Content> ();
+        containerRegistry.RegisterComponent<Games.Favorites.Content> ();
+        containerRegistry.RegisterComponent<Games.AllGames.Content> ();
+        containerRegistry.RegisterComponent<Games.Mobile.Content> ();
+        containerRegistry.RegisterComponent<Games.MacOS.Content> ();
 
         containerRegistry.Services.AddTransient<BattlenetGameLoad> ();
     }

@@ -1,5 +1,6 @@
 ﻿using Battlenet.Common.Components;
 using Battlenet.Main.Components;
+using DryIoc;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
 using System.Windows.Controls;
@@ -11,15 +12,17 @@ namespace Battlenet.Main
     {
         private readonly ILayoutNavigator _layoutNavigator;
         private readonly IWindowManager _windowManager;
+        private readonly IContainer _container;
 
         public Layout(ILayoutNavigator layoutNavigator,
-                    IWindowManager windowManager)
+                    IWindowManager windowManager,
+                    IContainer container)
         {
             this._layoutNavigator = layoutNavigator;
             this.Width = 1600;
             this.Height = 900;
             this._windowManager = windowManager;
-            this._layoutNavigator = layoutNavigator;
+            this._container = container;
         }
 
         public override void RegionAttached(object argu)
@@ -60,15 +63,12 @@ namespace Battlenet.Main
                               new Grid ()
                                 .Columns ("*, auto")
                                 .Children (
-                                    new DockPanel()
+                                    new Grid()
                                         .Column (0)
-                                        .Children(                                            
-                                            new Header (this._layoutNavigator)
-                                                .SetDock(Dock.Top),
-                                            new FlexRegion("SubHeader")
-                                                .SetDock (Dock.Top)
-                                                .Margin(bottom: 40),
-                                            new FlexRegion("Content")
+                                        .Children(
+                                            new FlexRegion("Content"),
+                                            new Header(this._layoutNavigator).Top (),
+                                            new FlexRegion("SubHeader").Top ().Margin(top:70)
                                         )
                                 )
                         )

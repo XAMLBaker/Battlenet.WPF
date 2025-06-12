@@ -17,8 +17,11 @@ public partial class App : FlexApplication
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
+        moduleCatalog.AddModule<Common.Module> ();
+
         moduleCatalog.AddModule<Login.Module> ();
         moduleCatalog.AddModule<Main.Module> ();
+        moduleCatalog.AddModule<Game.Module> ();
     }
 
     protected override void OnInitialized()
