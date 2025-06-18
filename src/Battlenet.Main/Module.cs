@@ -1,7 +1,7 @@
-﻿using FlexMVVM;
-using Battlenet.Main.Components;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Battlenet.Main._Shared.Components;
 using Battlenet.Service;
+using FlexMVVM;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Battlenet.Main;
 

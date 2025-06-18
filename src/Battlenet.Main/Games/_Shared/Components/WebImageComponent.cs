@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Battlenet.Main.Games.Components
+namespace Battlenet.Main.Games._Shared.Components
 {
     public partial class WebImageComponent : Component
     {

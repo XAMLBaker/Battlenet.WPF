@@ -1,6 +1,5 @@
 ﻿using Battlenet.Common.Components;
-using Battlenet.Main.Components;
-using Battlenet.Main.Games.Components;
+using Battlenet.Main.Games._Shared.Components;
 using Battlenet.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
 using DryIoc;

@@ -8,7 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Battlenet.Main.Components
+namespace Battlenet.Main._Shared.Components
 {
     public partial class Header : Component
     {
@@ -16,7 +16,7 @@ namespace Battlenet.Main.Components
 
         public Header(ILayoutNavigator layoutNavigator)
         {
-            this._layoutNavigator = layoutNavigator;
+            _layoutNavigator = layoutNavigator;
         }
         protected override Visual Build()
             => new Grid ()
@@ -43,12 +43,12 @@ namespace Battlenet.Main.Components
                                     .IsChecked (true)
                                     .OnCheckedAsync (async () =>
                                     {
-                                        await this._layoutNavigator.NavigateToAsync (RouteNames.Home);
+                                        await _layoutNavigator.NavigateToAsync (RouteNames.Home);
                                     }),
                                 GroupButtonTemplate ("GAMES")
                                     .OnCheckedAsync (async () =>
                                     {
-                                        await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/MyGames");
+                                        await _layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/MyGames");
                                     }),
                                 GroupButtonTemplate ("SHOP")
                                     .OnChecked (() =>
@@ -137,13 +137,13 @@ namespace Battlenet.Main.Components
                     })
                     .OnHover ((el) =>
                     {
-                        if (((GroupButton)el).IsChecked.Value == true)
+                        if (el.IsChecked.Value == true)
                             return;
                         el.Foreground.WithAnimation (Colors.White);
                     })
                     .OnRelease ((el) =>
                     {
-                        if (((GroupButton)el).IsChecked.Value == true)
+                        if (el.IsChecked.Value == true)
                             return;
                         el.Foreground.WithAnimation ("#8c8e80");
                     });

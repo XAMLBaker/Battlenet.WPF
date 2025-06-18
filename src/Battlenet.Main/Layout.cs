@@ -1,5 +1,5 @@
 ﻿using Battlenet.Common.Components;
-using Battlenet.Main.Components;
+using Battlenet.Main._Shared.Components;
 using DryIoc;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;
@@ -12,17 +12,14 @@ namespace Battlenet.Main
     {
         private readonly ILayoutNavigator _layoutNavigator;
         private readonly IWindowManager _windowManager;
-        private readonly IContainer _container;
 
         public Layout(ILayoutNavigator layoutNavigator,
-                    IWindowManager windowManager,
-                    IContainer container)
+                    IWindowManager windowManager)
         {
             this._layoutNavigator = layoutNavigator;
             this.Width = 1600;
             this.Height = 900;
             this._windowManager = windowManager;
-            this._container = container;
         }
 
         public override void RegionAttached(object argu)

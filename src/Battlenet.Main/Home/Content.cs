@@ -14,13 +14,13 @@ namespace Battlenet.Main.Home
 
         public Content(IContainer container)
         {
-            this._container = container;
+            _container = container;
         }
 
         public override void RegionAttached(object argu)
         {
             base.RegionAttached (argu);
-            RegionManager.Attach ("SubHeader", this._container.Resolve<Favorite> ());
+            RegionManager.Attach ("SubHeader", _container.Resolve<Favorite> ());
             RegionManager.Attach ("Content", this);
         }
 

@@ -1,5 +1,5 @@
-﻿using Battlenet.Main.Games.Components;
-using Battlenet.Main.Games.Models;
+﻿using Battlenet.Main.Games._Shared.Components;
+using Battlenet.Main.Games._Shared.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using FlexMVVM.WPF;
 using FlexMVVM.WPF.Markup;

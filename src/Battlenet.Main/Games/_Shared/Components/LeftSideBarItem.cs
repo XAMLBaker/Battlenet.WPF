@@ -1,12 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Battlenet.Main.Games.Components
+namespace Battlenet.Main.Games._Shared.Components
 {
-    public class TabItem : RadioButton
+    public class LeftSideBarItem : RadioButton
     {
-
-
         public int Count
         {
             get { return (int)GetValue (CountProperty); }
@@ -15,12 +13,12 @@ namespace Battlenet.Main.Games.Components
 
         // Using a DependencyProperty as the backing store for Count.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CountProperty =
-            DependencyProperty.Register ("Count", typeof (int), typeof (TabItem), new PropertyMetadata (0));
+            DependencyProperty.Register ("Count", typeof (int), typeof (LeftSideBarItem), new PropertyMetadata (0));
 
 
-        static TabItem()
+        static LeftSideBarItem()
         {
-            DefaultStyleKeyProperty.OverrideMetadata (typeof (TabItem), new FrameworkPropertyMetadata (typeof (TabItem)));
+            DefaultStyleKeyProperty.OverrideMetadata (typeof (LeftSideBarItem), new FrameworkPropertyMetadata (typeof (LeftSideBarItem)));
         }
     }
 }

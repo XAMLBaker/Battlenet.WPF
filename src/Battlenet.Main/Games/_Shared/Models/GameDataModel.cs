@@ -3,7 +3,7 @@ using System.IO;
 using System.Net.Http;
 using System.Windows.Media.Imaging;
 
-namespace Battlenet.Main.Games.Models;
+namespace Battlenet.Main.Games._Shared.Models;
 
 [INotifyPropertyChanged]
 public partial class GameDataModel : Battlenet.Service.Models.GameDataModel

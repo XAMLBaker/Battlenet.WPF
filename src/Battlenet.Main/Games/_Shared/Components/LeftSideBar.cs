@@ -1,4 +1,4 @@
-﻿using Battlenet.Main.Games.Models;
+﻿using Battlenet.Main.Games._Shared.Models;
 using Battlenet.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
 using FlexMVVM.WPF;
@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Battlenet.Main.Games.Components
+namespace Battlenet.Main.Games._Shared.Components
 {
     public partial class LeftSideBar : Component
     {
@@ -63,7 +63,7 @@ namespace Battlenet.Main.Games.Components
                                   .Margin(topbottom:10)
                                   .Background ("#31363f"), row: 1)
                     .AddChild (TabItemTemplate ("My Games")
-                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "GameDataModels.Count")
                                     .OnCheckedAsync(async()=>
                                     {
                                         Title?.Invoke ("My Games");
@@ -71,14 +71,14 @@ namespace Battlenet.Main.Games.Components
                                     })
                                     .IsChecked (true), row: 2)
                     .AddChild (TabItemTemplate ("Installed")
-                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "GameDataModels.Count")
                                     .OnCheckedAsync (async () =>
                                     {
                                         Title?.Invoke ("Installed");
                                         await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/Installed", GameDataModels);
                                     }), row: 3)
                     .AddChild (TabItemTemplate ("Favorites")
-                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "GameDataModels.Count")
                                      .OnCheckedAsync (async () =>
                                      {
                                          Title?.Invoke ("Favorites");
@@ -88,7 +88,7 @@ namespace Battlenet.Main.Games.Components
                                   .Margin (topbottom: 10)
                                   .Background ("#31363f"), row: 5)
                     .AddChild (TabItemTemplate ("All Games")
-                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "GameDataModels.Count")
                                      .OnCheckedAsync (async () =>
                                      {
                                         Title?.Invoke ("All Games");
@@ -96,29 +96,29 @@ namespace Battlenet.Main.Games.Components
 
                                     }), row: 6)
                     .AddChild (TabItemTemplate ("Start For Free")
-                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "GameDataModels.Count")
                                      .OnCheckedAsync (async () =>
                                      {
                                          Title?.Invoke ("Start For Free");
                                         await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/StartForFree", GameDataModels);
                                     }), row: 7)
                     .AddChild (TabItemTemplate ("Mobile")
-                                    .Link (TabItem.CountProperty, "MobileGame.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "MobileGame.Count")
                                     .OnCheckedAsync (async () =>
                                     {
                                         Title?.Invoke ("Mobile");
                                         await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/Mobile", MobileGame);
                                     }), row: 8)
                     .AddChild (TabItemTemplate ("MacOS")
-                                    .Link (TabItem.CountProperty, "GameDataModels.Count")
+                                    .Link (LeftSideBarItem.CountProperty, "GameDataModels.Count")
                                      .OnCheckedAsync (async () =>
                                      {
                                          Title?.Invoke ("MacOS");
                                         await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/MacOS", GameDataModels);
                                     }), row: 9);
 
-        private TabItem TabItemTemplate(string name)
-            => new TabItem ()
+        private LeftSideBarItem TabItemTemplate(string name)
+            => new LeftSideBarItem ()
                     .Content (
                         new Label()
                             .Foreground(Colors.White)

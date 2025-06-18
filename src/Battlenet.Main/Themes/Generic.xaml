@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Battlenet.Main">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/TabItem.xaml" />
+        <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/LeftSideBarItem.xaml" />
         <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/GameCard.xaml" />
     </ResourceDictionary.MergedDictionaries>
 

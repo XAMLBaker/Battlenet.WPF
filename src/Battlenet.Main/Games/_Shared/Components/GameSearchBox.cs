@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Battlenet.Main.Games.Components
+namespace Battlenet.Main.Games._Shared.Components
 {
     public partial class GameSearchBox : Component
     {
