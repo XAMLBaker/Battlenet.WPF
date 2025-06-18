@@ -1,7 +1,7 @@
-﻿using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
-using Battlenet.Common.Components;
+﻿using Battlenet.Common.Components;
 using Battlenet.Login.Components;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -25,7 +25,7 @@ namespace Battlenet.Login
 
         public override void RegionAttached(object argu = null)
         {
-            RegionManager.Attach ("Root", this);
+            Slate.WPF.RegionManager.Attach ("Root", this);
         }
 
         protected override void OnRender(object sender)
@@ -81,8 +81,8 @@ namespace Battlenet.Login
                                                          UserTextBoxTemplate ("이메일 또는 휴대전화").Margin (bottom: 8),
                                                          UserTextBoxTemplate ("비밀번호").Margin (bottom: 12),
 
-                                                         new FlexCheckBox ()
-                                                            .BoxStyle (() => new FlexCheckBoxModel ()
+                                                         new SlateCheckBox ()
+                                                            .BoxStyle (() => new SlateCheckBoxModel ()
                                                                                 .BackColor ("#101117")
                                                                                 .CheckColor ("#46a4fc")
                                                                                 .Size (18)
@@ -94,7 +94,7 @@ namespace Battlenet.Login
                                                             .FontSize (13)
                                                             .Content ("로그인 상태 유지하기"),
 
-                                                         new FlexButton ()
+                                                         new SlateButton ()
                                                             .Margin (top: 30)
                                                             .Content ("로그인")
                                                             .FontSize (15)
@@ -106,11 +106,11 @@ namespace Battlenet.Login
                                                             .BorderThickness (2)
                                                             .OnHover ((el) =>
                                                             {
-                                                                ((FlexButton)el).BorderBrush.WithAnimation ("#47a6ff", 200);
+                                                                ((SlateButton)el).BorderBrush.WithAnimation ("#47a6ff", 200);
                                                             })
                                                             .OnRelease ((el) =>
                                                             {
-                                                                ((FlexButton)el).BorderBrush.WithAnimation (Colors.Transparent, 200);
+                                                                ((SlateButton)el).BorderBrush.WithAnimation (Colors.Transparent, 200);
                                                             })
                                                             .OnTapped (() =>
                                                             {
@@ -120,7 +120,7 @@ namespace Battlenet.Login
                                                          new Grid ()
                                                             .Margin (topbottom: 26)
                                                             .Children (
-                                                                new FlexDivider ()
+                                                                new Slate.WPF.SlateDivider ()
                                                                     .Thickness (1)
                                                                     .Background ("#3f4147"),
                                                                 new Label ()
@@ -133,7 +133,7 @@ namespace Battlenet.Login
                                                                     .HCenter ()
                                                                     .ContentHCenter ()
                                                             ),
-                                                         new FlexPanel()
+                                                         new FlexPanel ()
                                                             .Height(126)
                                                             .Orientation (Orientation.Vertical)
                                                             .Justify(JustifyContent.SpaceBetween)
@@ -174,10 +174,10 @@ namespace Battlenet.Login
                             )
                    );
 
-        private FlexButton SocialButton(string background, string hoverBackground, Viewbox Content) => SocialButton (ColorTool.Get (background), ColorTool.Get (hoverBackground), Content);
-        private FlexButton SocialButton(Color background, string hoverBackground, Viewbox Content) => SocialButton (background, ColorTool.Get (hoverBackground), Content);
-        private FlexButton SocialButton(Color background, Color hoverBackground, Viewbox Content)
-            => new FlexButton ()
+        private SlateButton SocialButton(string background, string hoverBackground, Viewbox Content) => SocialButton (ColorTool.Get (background), ColorTool.Get (hoverBackground), Content);
+        private SlateButton SocialButton(Color background, string hoverBackground, Viewbox Content) => SocialButton (background, ColorTool.Get (hoverBackground), Content);
+        private SlateButton SocialButton(Color background, Color hoverBackground, Viewbox Content)
+            => new SlateButton ()
                   .CornerRadius (5)
                   .Width (48)
                   .Height (48)
@@ -189,11 +189,11 @@ namespace Battlenet.Login
                   )
                   .OnHover ((el) =>
                   {
-                      ((FlexButton)el).Background.WithAnimation (hoverBackground, 200);
+                      ((SlateButton)el).Background.WithAnimation (hoverBackground, 200);
                   })
                   .OnRelease ((el) =>
                   {
-                      ((FlexButton)el).Background.WithAnimation (background, 200);
+                      ((SlateButton)el).Background.WithAnimation (background, 200);
                   });
 
         private TextBlock Text(string text)
@@ -212,8 +212,8 @@ namespace Battlenet.Login
                         ((TextBlock)el).Foreground.WithAnimation ("#3a84f1");
                     });
 
-        private FlexTextBox UserTextBoxTemplate(string waterMarkText)
-            => new FlexTextBox ()
+        private SlateTextBox UserTextBoxTemplate(string waterMarkText)
+            => new SlateTextBox ()
                     .WaterMarkText (waterMarkText)
                     .Background ("#101117")
                     .BorderBrush ("#696b6f")
@@ -224,27 +224,27 @@ namespace Battlenet.Login
                     .WaterMarkTextColor ("#88888b")
                     .OnHover ((el) =>
                     {
-                        var tb = (FlexTextBox)el;
+                        var tb = (Slate.WPF.SlateTextBox)el;
                         if (tb.IsKeyboardFocused)
                             return;
 
-                        ((FlexTextBox)el).BorderBrush.WithAnimation ("#7f8084", 100);
+                        ((Slate.WPF.SlateTextBox)el).BorderBrush.WithAnimation ("#7f8084", 100);
                     })
                     .OnRelease ((el) =>
                     {
-                        var tb = (FlexTextBox)el;
+                        var tb = (Slate.WPF.SlateTextBox)el;
                         if (tb.IsKeyboardFocused)
                             return;
 
-                        ((FlexTextBox)el).BorderBrush.WithAnimation ("#696b6f", 100);
+                        ((Slate.WPF.SlateTextBox)el).BorderBrush.WithAnimation ("#696b6f", 100);
                     })
                     .OnFocus ((tb) =>
                     {
-                        ((FlexTextBox)tb).BorderBrush.WithAnimation ("#148eff", 100);
+                        ((Slate.WPF.SlateTextBox)tb).BorderBrush.WithAnimation ("#148eff", 100);
                     })
                     .OnLostFocus ((tb) =>
                     {
-                        ((FlexTextBox)tb).BorderBrush.WithAnimation ("#101117", 100);
+                        ((Slate.WPF.SlateTextBox)tb).BorderBrush.WithAnimation ("#101117", 100);
                     });
     }
 }

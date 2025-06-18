@@ -1,6 +1,6 @@
 ﻿using Battlenet.Main._Shared.Components;
 using Battlenet.Service;
-using FlexMVVM;
+using Slate;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Battlenet.Main;

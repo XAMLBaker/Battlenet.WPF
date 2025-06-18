@@ -1,4 +1,4 @@
-﻿using FlexMVVM;
+﻿using Slate;
 namespace Battlenet.Login
 {
     public class Module : IModule

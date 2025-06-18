@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
+    <ProjectReference Include="..\..\..\Slate.WPF\src\Slate.WPF.Markup\Slate.WPF.Markup.csproj" />
     <ProjectReference Include="..\Battlenet.Common\Battlenet.Common.csproj" />
   </ItemGroup>
   <ItemGroup>

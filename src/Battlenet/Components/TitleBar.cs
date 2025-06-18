@@ -1,12 +1,12 @@
-﻿using FlexMVVM;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+﻿using Slate;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Battlenet.Components
 {
-    public class TitleBar : Component
+    public class TitleBar : Slate.WPF.Markup.Component
     {
         private readonly State<bool> _sideBarState;
 

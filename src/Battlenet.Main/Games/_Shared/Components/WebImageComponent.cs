@@ -1,4 +1,4 @@
-﻿using FlexMVVM.WPF.Markup;
+﻿using Slate.WPF.Markup;
 using System.IO;
 using System.Net.Http;
 using System.Windows;

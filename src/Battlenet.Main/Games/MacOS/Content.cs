@@ -1,8 +1,8 @@
 ﻿using Battlenet.Main.Games._Shared.Components;
 using Battlenet.Main.Games._Shared.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace Battlenet.Main.Games.MacOS;
 
-public partial class Content : Component
+public partial class Content : Slate.WPF.Markup.Component
 {
     [ObservableProperty] ObservableCollection<GameDataModel> gameDatas = new ();
     public override void RegionAttached(object argu)

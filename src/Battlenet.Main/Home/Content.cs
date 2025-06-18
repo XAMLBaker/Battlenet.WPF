@@ -1,14 +1,14 @@
 ﻿using Battlenet.Common.Components;
 using DryIoc;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Battlenet.Main.Home
 {
-    public partial class Content : Component
+    public partial class Content : Slate.WPF.Markup.Component
     {
         private readonly IContainer _container;
 

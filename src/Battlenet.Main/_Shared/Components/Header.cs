@@ -1,6 +1,6 @@
 ﻿using Battlenet.Common.Components;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 
 namespace Battlenet.Main._Shared.Components
 {
-    public partial class Header : Component
+    public partial class Header : Slate.WPF.Markup.Component
     {
         private readonly ILayoutNavigator _layoutNavigator;
 

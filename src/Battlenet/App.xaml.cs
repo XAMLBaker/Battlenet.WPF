@@ -1,6 +1,6 @@
-﻿using FlexMVVM;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+﻿using Slate;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Diagnostics;
 using System.Windows;
 
@@ -9,11 +9,11 @@ namespace Battlenet;
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
-public partial class App : FlexApplication
+public partial class App : SlateApplication
 {
-    //protected override void Render() => flex.Window(()=> new MainWindow())
+    //protected override void Render() => Slate.Window(()=> new MainWindow())
     //                                        .StartWithLayout<Login.Content> ();
-    protected override void Render() => flex.StartWithLayout<Login.Module> ();
+    protected override void Render() => Slate.StartWithLayout<Login.Module> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {

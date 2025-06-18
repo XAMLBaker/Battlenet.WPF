@@ -1,5 +1,5 @@
 ﻿using Battlenet.Common.Components;
-using FlexMVVM;
+using Slate;
 
 namespace Battlenet.Common
 {

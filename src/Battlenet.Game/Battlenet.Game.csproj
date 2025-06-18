@@ -19,9 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF.Markup\FlexMVVM.WPF.Markup.csproj" />
-    <ProjectReference Include="..\..\..\FlexMVVM.WPF\src\FlexMVVM.WPF\FlexMVVM.WPF.csproj" />
-    <ProjectReference Include="..\..\..\FlexMVVM\src\FlexMVVM\FlexMVVM.csproj" />
+    <ProjectReference Include="..\..\..\Slate.WPF\src\Slate.WPF\Slate.WPF.csproj" />
     <ProjectReference Include="..\Battlenet.Common\Battlenet.Common.csproj" />
   </ItemGroup>
 

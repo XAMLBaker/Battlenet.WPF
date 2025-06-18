@@ -3,15 +3,15 @@ using Battlenet.Main.Games._Shared.Components;
 using Battlenet.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
 using DryIoc;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Battlenet.Main.Games
 {
-    public partial class Layout : Component
+    public partial class Layout : Slate.WPF.Markup.Component
     {
         private readonly IContainer _container;
         private readonly ILayoutNavigator _layoutNavigator;
@@ -75,7 +75,7 @@ namespace Battlenet.Main.Games
                                         .Text ("Sort by:")
 
                                 ),
-                            new FlexRegion ("GamesContent")
+                            new SlateRegionControl ("GamesContent")
                             {
                                 Transition = TransitionType.Fade
                             }

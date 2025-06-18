@@ -1,8 +1,8 @@
 ﻿using Battlenet.Main.Games._Shared.Models;
 using Battlenet.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace Battlenet.Main.Games._Shared.Components
 {
-    public partial class LeftSideBar : Component
+    public partial class LeftSideBar : Slate.WPF.Markup.Component
     {
         private readonly ILayoutNavigator _layoutNavigator;
         private readonly BattlenetGameLoad _battlenetGameLoad;
@@ -59,7 +59,7 @@ namespace Battlenet.Main.Games._Shared.Components
                     .Columns ("*")
                     .Rows ("auto, auto, auto, auto, auto, auto, auto, auto, auto, auto")
                     .AddChild (new GameSearchBox (), row: 0)
-                    .AddChild (new FlexDivider ()
+                    .AddChild (new SlateDivider ()
                                   .Margin(topbottom:10)
                                   .Background ("#31363f"), row: 1)
                     .AddChild (TabItemTemplate ("My Games")
@@ -84,7 +84,7 @@ namespace Battlenet.Main.Games._Shared.Components
                                          Title?.Invoke ("Favorites");
                                         await this._layoutNavigator.NavigateToAsync ($"{RouteNames.Games}/Favorites", GameDataModels);
                                     }), row: 4)
-                    .AddChild (new FlexDivider ()
+                    .AddChild (new SlateDivider ()
                                   .Margin (topbottom: 10)
                                   .Background ("#31363f"), row: 5)
                     .AddChild (TabItemTemplate ("All Games")

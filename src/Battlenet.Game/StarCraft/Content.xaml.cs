@@ -1,6 +1,6 @@
 ﻿using Battlenet.Common.Components;
 using DryIoc;
-using FlexMVVM.WPF;
+using Slate.WPF;
 using System.Windows.Controls;
 
 namespace Battlenet.Game.StarCraft

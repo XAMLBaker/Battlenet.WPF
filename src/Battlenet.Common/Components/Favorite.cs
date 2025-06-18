@@ -1,5 +1,5 @@
-﻿using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+﻿using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -8,7 +8,7 @@ using System.Windows.Shapes;
 
 namespace Battlenet.Common.Components
 {
-    public partial class Favorite : Component
+    public partial class Favorite : Slate.WPF.Markup.Component
     {
         private readonly ILayoutNavigator _layoutNavigator;
 

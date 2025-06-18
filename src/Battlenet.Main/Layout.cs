@@ -1,14 +1,14 @@
 ﻿using Battlenet.Common.Components;
 using Battlenet.Main._Shared.Components;
 using DryIoc;
-using FlexMVVM.WPF;
-using FlexMVVM.WPF.Markup;
+using Slate.WPF;
+using Slate.WPF.Markup;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Battlenet.Main
 {
-    public partial class Layout : Component
+    public partial class Layout : Slate.WPF.Markup.Component
     {
         private readonly ILayoutNavigator _layoutNavigator;
         private readonly IWindowManager _windowManager;
@@ -63,9 +63,9 @@ namespace Battlenet.Main
                                     new Grid()
                                         .Column (0)
                                         .Children(
-                                            new FlexRegion("Content"),
+                                            new SlateRegionControl ("Content"),
                                             new Header(this._layoutNavigator).Top (),
-                                            new FlexRegion("SubHeader").Top ().Margin(top:70)
+                                            new SlateRegionControl ("SubHeader").Top ().Margin(top:70)
                                         )
                                 )
                         )
