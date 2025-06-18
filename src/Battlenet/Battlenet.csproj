@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Slate.WPF\src\Slate.WPF.Markup\Slate.WPF.Markup.csproj" />
     <ProjectReference Include="..\..\..\Slate.WPF\src\Slate.WPF\Slate.WPF.csproj" />
     <ProjectReference Include="..\Battlenet.Common\Battlenet.Common.csproj" />
     <ProjectReference Include="..\Battlenet.Game\Battlenet.Game.csproj" />

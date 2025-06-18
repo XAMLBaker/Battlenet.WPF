@@ -1,6 +1,6 @@
-﻿<slate:SlateApplication
+﻿<Slate:SlateApplication
     x:Class="Battlenet.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Battlenet"
-    xmlns:slate="https://lukewire129.github.io/blog" />
+    xmlns:Slate="https://lukewire129.github.io/blog" />
