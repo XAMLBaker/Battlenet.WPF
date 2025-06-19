@@ -1,7 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-
-namespace Battlenet.Main.Games._Shared.Components
+﻿namespace Battlenet.Main.Games._Shared.Components
 {
     public class GameCard : ListBox
     {

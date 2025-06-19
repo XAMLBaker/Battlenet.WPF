@@ -1,5 +1,4 @@
 ﻿using Battlenet.Common.Components;
-using Slate;
 
 namespace Battlenet.Common
 {

@@ -1,10 +1,5 @@
 ﻿using Battlenet.Common.Components;
 using Battlenet.Main._Shared.Components;
-using DryIoc;
-using Slate.WPF;
-using Slate.WPF.Markup;
-using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace Battlenet.Main
 {

@@ -1,12 +1,7 @@
 ﻿using Battlenet.Main.Games._Shared.Components;
 using Battlenet.Main.Games._Shared.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Slate.WPF;
-using Slate.WPF.Markup;
 using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace Battlenet.Main.Games.StartForFree;
 

@@ -1,7 +1,4 @@
 ﻿using Battlenet.Common.Components;
-using DryIoc;
-using Slate.WPF;
-using System.Windows.Controls;
 
 namespace Battlenet.Game.WarCraft
 {

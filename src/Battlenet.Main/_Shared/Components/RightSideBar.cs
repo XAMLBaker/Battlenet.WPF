@@ -1,8 +1,4 @@
-﻿using Slate.WPF.Markup;
-using System.Windows.Controls;
-using System.Windows.Media;
-
-namespace Battlenet.Main._Shared.Components
+﻿namespace Battlenet.Main._Shared.Components
 {
     public partial class RightSideBar : Component
     {

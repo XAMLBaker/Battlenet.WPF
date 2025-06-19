@@ -1,10 +1,5 @@
 ﻿using Battlenet.Common.Components;
-using Slate.WPF;
-using Slate.WPF.Markup;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 

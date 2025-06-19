@@ -1,8 +1,4 @@
-﻿using Slate.WPF;
-using Slate.WPF.Markup;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Shapes;
+﻿using System.Windows.Shapes;
 
 namespace Battlenet.Login.Components
 {

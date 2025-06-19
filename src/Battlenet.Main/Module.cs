@@ -1,6 +1,5 @@
 ﻿using Battlenet.Main._Shared.Components;
 using Battlenet.Service;
-using Slate;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Battlenet.Main;

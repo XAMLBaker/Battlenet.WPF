@@ -1,8 +1,4 @@
-﻿using Slate;
-using Slate.WPF;
-using Slate.WPF.Markup;
-using System.Diagnostics;
-using System.Windows;
+﻿using System.Diagnostics;
 
 namespace Battlenet;
 
@@ -13,7 +9,7 @@ public partial class App : SlateApplication
 {
     //protected override void Render() => Slate.Window(()=> new MainWindow())
     //                                        .StartWithLayout<Login.Content> ();
-    protected override void Render() => Slate.StartWithLayout<Login.Module> ();
+    protected override void Render() => Slate.StartWithLayout<Login.Content> ();
 
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {

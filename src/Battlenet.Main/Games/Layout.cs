@@ -2,12 +2,6 @@
 using Battlenet.Main.Games._Shared.Components;
 using Battlenet.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
-using DryIoc;
-using Slate.WPF;
-using Slate.WPF.Markup;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace Battlenet.Main.Games
 {
