@@ -130,31 +130,22 @@ namespace Battlenet.Login
                                                             ),
                                                          new FlexPanel ()
                                                             .Height(126)
-                                                            .Orientation (Orientation.Vertical)
+                                                            .Orientation (Orientation.Horizontal)
                                                             .Justify(JustifyContent.SpaceBetween)
+                                                            
                                                             .Children(
-                                                                 new FlexPanel ()
-                                                                     .Align (AlignContent.Start)
-                                                                     .Justify (JustifyContent.SpaceAuto)
-                                                                     .Children (
-                                                                         SocialButton (Colors.White, "#cecece", IconPathSupport.Google),
-                                                                         SocialButton ("#3172d9", "#1860b7", IconPathSupport.Facebook),
-                                                                         SocialButton (Colors.White, "#cecece", IconPathSupport.Apple)
-                                                                     ),
-                                                                 new FlexPanel ()
-                                                                     .Align (AlignContent.End)
-                                                                     .Justify (JustifyContent.SpaceAuto)
-                                                                     .Children (
-                                                                         SocialButton ("#107c10", "#0a4f0a", IconPathSupport.Xbox),
-                                                                         SocialButton ("#0070cc", "#00439c", IconPathSupport.PlayStation),
-                                                                         SocialButton ("#e60012", "#b3000e", IconPathSupport.Nintendo),
-                                                                         SocialButton (Colors.White, "#cecece", IconPathSupport.Steam)
-                                                                     )
+                                                                SocialButton (Colors.White, "#cecece", IconPathSupport.Google),
+                                                                SocialButton ("#3172d9", "#1860b7", IconPathSupport.Facebook),
+                                                                SocialButton (Colors.White, "#cecece", IconPathSupport.Apple),
+                                                                SocialButton ("#107c10", "#0a4f0a", IconPathSupport.Xbox),
+                                                                SocialButton ("#0070cc", "#00439c", IconPathSupport.PlayStation),
+                                                                SocialButton ("#e60012", "#b3000e", IconPathSupport.Nintendo),
+                                                                SocialButton (Colors.White, "#cecece", IconPathSupport.Steam)
                                                              ),
                                                         new FlexPanel()
                                                             .Margin(top:35)
                                                             .Orientation(Orientation.Vertical)
-                                                            .Align(AlignContent.Center)
+                                                            .AlignContent (AlignContent.Center)
                                                             .Justify(JustifyContent.SpaceEvenly)
                                                             .Height(171)
                                                             .Children(
