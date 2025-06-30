@@ -49,7 +49,7 @@ namespace Battlenet.Main.Games._Shared.Components
             return this;
         }
 
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Grid ()
                     .Columns ("*")
                     .Rows ("auto, auto, auto, auto, auto, auto, auto, auto, auto, auto")

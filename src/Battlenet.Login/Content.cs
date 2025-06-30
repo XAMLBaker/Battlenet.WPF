@@ -26,9 +26,8 @@ namespace Battlenet.Login
         protected override void OnRender(object sender)
         {
             base.OnRender (sender);
-            this._windowManager.CornerRadius (0);
         }
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Grid ()
                   .Background ("#15171e")
                   .Children (

@@ -21,7 +21,7 @@ namespace Battlenet.Main.Games._Shared.Components
             this.Background (Colors.Transparent);
         }
 
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Border ()
                 .CornerRadius (5)
                 .Background ("#222730")

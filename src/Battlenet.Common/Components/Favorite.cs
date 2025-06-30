@@ -11,7 +11,7 @@ namespace Battlenet.Common.Components
         {
             this._layoutNavigator = layoutNavigator;
         }
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Border ()
                   .Child (
                       new Grid()

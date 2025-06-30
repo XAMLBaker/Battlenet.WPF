@@ -2,7 +2,7 @@
 {
     public partial class RightSideBar : Component
     {
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Grid ();
     }
 }

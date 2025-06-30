@@ -23,7 +23,7 @@ namespace Battlenet.Main.Home
             base.OnLoaded (sender, e);
         }
 
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Grid ()
                     .Margin(top: 150)
                     .Background (Colors.Red);

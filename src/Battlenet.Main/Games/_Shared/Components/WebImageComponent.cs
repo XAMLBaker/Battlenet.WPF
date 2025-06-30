@@ -21,7 +21,7 @@ namespace Battlenet.Main.Games._Shared.Components
                 });
             });
         }
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Viewbox ()
                     .Child (
                         new Grid ()

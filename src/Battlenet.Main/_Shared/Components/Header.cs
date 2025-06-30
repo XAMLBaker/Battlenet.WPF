@@ -13,7 +13,7 @@ namespace Battlenet.Main._Shared.Components
         {
             _layoutNavigator = layoutNavigator;
         }
-        protected override Visual Build()
+        protected override UIElement Build()
             => new Grid ()
                    .Height(60)
                    .Columns("auto, auto, *")

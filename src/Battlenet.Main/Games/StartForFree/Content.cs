@@ -20,7 +20,7 @@ public partial class Content : Slate.WPF.Markup.Component
         });
     }
 
-    protected override Visual Build()
+    protected override UIElement Build()
         => new GameCard ()
                 .Link (ItemsControl.ItemsSourceProperty, nameof (GameDatas));
 }

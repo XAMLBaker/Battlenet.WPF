@@ -26,10 +26,9 @@ namespace Battlenet.Main
         protected override void OnRender(object sender)
         {
             base.OnRender (sender);
-            this._windowManager.CornerRadius (15);
         }
 
-        protected override Visual Build()
+        protected override UIElement Build()
             => new DockPanel ()
                   .Children (
                       new FlexPanel ()

@@ -41,7 +41,7 @@ namespace Battlenet.Main.Games
             });
         }
 
-        protected override Visual Build()
+        protected override UIElement Build()
             => new DockPanel()
                 .Margin (top: 150)
                 .Children(
