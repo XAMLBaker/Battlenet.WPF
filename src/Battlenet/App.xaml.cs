@@ -1,16 +1,7 @@
-﻿using System.Diagnostics;
+﻿namespace Battlenet;
 
-namespace Battlenet;
-
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
-public partial class App : SlateApplication
+public class BattlenetBootStrapper : Bootstrapper
 {
-    //protected override void Render() => Slate.Window(()=> new MainWindow())
-    //                                        .StartWithLayout<Login.Content> ();
-    protected override void Render() => Slate.StartWithLayout<Login.Content> ();
-
     protected override void ModuleContext(IModuleCatalog moduleCatalog)
     {
         moduleCatalog.AddModule<Common.Module> ();
@@ -19,18 +10,19 @@ public partial class App : SlateApplication
         moduleCatalog.AddModule<Main.Module> ();
         moduleCatalog.AddModule<Game.Module> ();
     }
-
-    protected override void OnInitialized()
+}
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
+{
+    protected override void OnStartup(StartupEventArgs e)
     {
-        base.OnInitialized ();
-#if DEBUG
-        HotReloadManager.Init (this);
-#endif
+        base.OnStartup (e);
 
-
-        foreach (var name in Application.Current.Resources.MergedDictionaries)
-        {
-            Debug.WriteLine (name.Source);
-        }
+        new BattlenetBootStrapper ()
+               .UseMarkupHotReload (this)
+               .StartLayout<Login.Content> ()
+               .Run ();
     }
 }

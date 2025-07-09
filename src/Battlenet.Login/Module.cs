@@ -1,5 +1,4 @@
-﻿using Slate;
-namespace Battlenet.Login
+﻿namespace Battlenet.Login
 {
     public class Module : IModule
     {

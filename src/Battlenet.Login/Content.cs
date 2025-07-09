@@ -6,15 +6,12 @@ namespace Battlenet.Login
 {
     public class Content : Component
     {
-        private readonly IWindowManager _windowManager;
         private readonly ILayoutNavigator _layoutNavigator;
 
-        public Content(IWindowManager windowManager,
-                       ILayoutNavigator layoutNavigator)
+        public Content(ILayoutNavigator layoutNavigator)
         {
             this.Width = 364;
             this.Height = 815;
-            this._windowManager = windowManager;
             this._layoutNavigator = layoutNavigator;
         }
 
