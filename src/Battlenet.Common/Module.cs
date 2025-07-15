@@ -1,4 +1,6 @@
 ﻿using Battlenet.Common.Components;
+using Microsoft.Extensions.DependencyInjection;
+using Slate.Navigation;
 
 namespace Battlenet.Common
 {
@@ -8,9 +10,13 @@ namespace Battlenet.Common
         {
         }
 
-        public void Register(IContainerRegistry containerRegistry)
+        public void Register(IServiceCollection services)
         {
-            containerRegistry.RegisterComponent<Favorite> ();
+        }
+
+        public void RegisterComponent(IComponentRegistry componentRegistry)
+        {
+            componentRegistry.RegisterComponent<Favorite> ();
         }
 
         public void ViewModelMapper(IViewModelMapper modelMapper)

@@ -3,12 +3,12 @@ using Battlenet.Main._Shared.Components;
 
 namespace Battlenet.Main
 {
-    public partial class Layout : Slate.WPF.Markup.Component
+    public partial class Content : Slate.WPF.Markup.Component
     {
         private readonly ILayoutNavigator _layoutNavigator;
         private readonly IWindowManager _windowManager;
 
-        public Layout(ILayoutNavigator layoutNavigator,
+        public Content(ILayoutNavigator layoutNavigator,
                     IWindowManager windowManager)
         {
             this._layoutNavigator = layoutNavigator;

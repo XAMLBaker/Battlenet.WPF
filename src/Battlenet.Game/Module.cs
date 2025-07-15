@@ -1,4 +1,6 @@
-﻿using Slate;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Slate;
+using Slate.Navigation;
 
 namespace Battlenet.Game
 {
@@ -9,11 +11,15 @@ namespace Battlenet.Game
 
         }
 
-        public void Register(IContainerRegistry containerRegistry)
+        public void Register(IServiceCollection services)
         {
-            containerRegistry.RegisterComponent<WarCraft.Content> ();
-            containerRegistry.RegisterComponent<OverWatch.Content> ();
-            containerRegistry.RegisterComponent<StarCraft.Content> ();
+        }
+
+        public void RegisterComponent(IComponentRegistry componentRegistry)
+        {
+            componentRegistry.RegisterComponent<WarCraft.Content> ();
+            componentRegistry.RegisterComponent<OverWatch.Content> ();
+            componentRegistry.RegisterComponent<StarCraft.Content> ();
         }
 
         public void ViewModelMapper(IViewModelMapper modelMapper)

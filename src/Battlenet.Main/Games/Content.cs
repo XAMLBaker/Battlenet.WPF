@@ -5,13 +5,13 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Battlenet.Main.Games
 {
-    public partial class Layout : Slate.WPF.Markup.Component
+    public partial class Content : Slate.WPF.Markup.Component
     {
         private readonly IContainer _container;
         private readonly ILayoutNavigator _layoutNavigator;
         private readonly BattlenetGameLoad _battlenetGameLoad;
         [ObservableProperty] string tabTitle = null;
-        public Layout(ILayoutNavigator layoutNavigator,
+        public Content(ILayoutNavigator layoutNavigator,
                       BattlenetGameLoad battlenetGameLoad,
                       IContainer container)
         {

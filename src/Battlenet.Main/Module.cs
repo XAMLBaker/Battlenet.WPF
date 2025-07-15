@@ -1,6 +1,7 @@
 ﻿using Battlenet.Main._Shared.Components;
 using Battlenet.Service;
 using Microsoft.Extensions.DependencyInjection;
+using Slate.Navigation;
 
 namespace Battlenet.Main;
 
@@ -11,22 +12,25 @@ public class Module : IModule
 
     }
 
-    public void Register(IContainerRegistry containerRegistry)
+    public void Register(IServiceCollection services)
     {
-        containerRegistry.RegisterComponent<Layout> ();
-        containerRegistry.RegisterComponent<RightSideBar> ();
+        services.AddTransient<BattlenetGameLoad> ();
+    }
 
-        containerRegistry.RegisterComponent<Home.Content> ();
+    public void RegisterComponent(IComponentRegistry componentRegistry)
+    {
+        componentRegistry.RegisterComponent<Content> ();
+        componentRegistry.RegisterComponent<RightSideBar> ();
 
-        containerRegistry.RegisterComponent<Games.Layout> ();
-        containerRegistry.RegisterComponent<Games.MyGames.Content> ();
-        containerRegistry.RegisterComponent<Games.Installed.Content> ();
-        containerRegistry.RegisterComponent<Games.Favorites.Content> ();
-        containerRegistry.RegisterComponent<Games.AllGames.Content> ();
-        containerRegistry.RegisterComponent<Games.Mobile.Content> ();
-        containerRegistry.RegisterComponent<Games.MacOS.Content> ();
+        componentRegistry.RegisterComponent<Home.Content> ();
 
-        containerRegistry.Services.AddTransient<BattlenetGameLoad> ();
+        componentRegistry.RegisterComponent<Games.Content> ();
+        componentRegistry.RegisterComponent<Games.MyGames.Content> ();
+        componentRegistry.RegisterComponent<Games.Installed.Content> ();
+        componentRegistry.RegisterComponent<Games.Favorites.Content> ();
+        componentRegistry.RegisterComponent<Games.AllGames.Content> ();
+        componentRegistry.RegisterComponent<Games.Mobile.Content> ();
+        componentRegistry.RegisterComponent<Games.MacOS.Content> ();
     }
 
     public void ViewModelMapper(IViewModelMapper modelMapper)

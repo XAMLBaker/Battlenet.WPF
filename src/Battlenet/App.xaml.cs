@@ -1,15 +1,7 @@
 ﻿namespace Battlenet;
 
-public class BattlenetBootStrapper : Bootstrapper
+public class BattlenetBootStrapper : AppBootstrapper
 {
-    protected override void ModuleContext(IModuleCatalog moduleCatalog)
-    {
-        moduleCatalog.AddModule<Common.Module> ();
-
-        moduleCatalog.AddModule<Login.Module> ();
-        moduleCatalog.AddModule<Main.Module> ();
-        moduleCatalog.AddModule<Game.Module> ();
-    }
 }
 /// <summary>
 /// Interaction logic for App.xaml
@@ -23,6 +15,10 @@ public partial class App : Application
         new BattlenetBootStrapper ()
                .UseMarkupHotReload (this)
                .StartLayout<Login.Content> ()
+               .AddModule<Common.Module> ()
+               .AddModule<Login.Module> ()
+               .AddModule<Main.Module> ()
+               .AddModule<Game.Module> ()
                .Run ();
     }
 }

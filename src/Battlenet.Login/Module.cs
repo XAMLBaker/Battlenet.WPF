@@ -1,4 +1,7 @@
-﻿namespace Battlenet.Login
+﻿using Microsoft.Extensions.DependencyInjection;
+using Slate.Navigation;
+
+namespace Battlenet.Login
 {
     public class Module : IModule
     {
@@ -6,14 +9,16 @@
         {
         }
 
-        public void Register(IContainerRegistry containerRegistry)
+        public void Register(IServiceCollection services)
         {
-            containerRegistry.RegisterComponent<Content> ();
+        }
+
+        public void RegisterComponent(IComponentRegistry componentRegistry)
+        {
         }
 
         public void ViewModelMapper(IViewModelMapper modelMapper)
         {
-
         }
     }
 }
