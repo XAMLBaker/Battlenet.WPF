@@ -8,6 +8,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Home\Resources\callofduty_background.jpg" />
+    <None Remove="Home\Resources\callofduty_logo.png" />
+    <None Remove="Home\Resources\callofduty_thumnail.jpg" />
+    <None Remove="Home\Resources\Diablo_background.jpg" />
+    <None Remove="Home\Resources\Diablo_logo.png" />
+    <None Remove="Home\Resources\Diablo_thumnail.jpg" />
+    <None Remove="Home\Resources\HearthStone_background.jpg" />
+    <None Remove="Home\Resources\HearthStone_logo.png" />
+    <None Remove="Home\Resources\HearthStone_thumnail.jpg" />
+    <None Remove="Home\Resources\Warcraft_Background.jpg" />
+    <None Remove="Home\Resources\Warcraft_Logo.png" />
+    <None Remove="Home\Resources\Warcraft_thumnail.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Home\Resources\callofduty_background.jpg" />
+    <Resource Include="Home\Resources\callofduty_logo.png" />
+    <Resource Include="Home\Resources\callofduty_thumnail.jpg" />
+    <Resource Include="Home\Resources\Diablo_background.jpg" />
+    <Resource Include="Home\Resources\Diablo_logo.png" />
+    <Resource Include="Home\Resources\Diablo_thumnail.jpg" />
+    <Resource Include="Home\Resources\HearthStone_background.jpg" />
+    <Resource Include="Home\Resources\HearthStone_logo.png" />
+    <Resource Include="Home\Resources\HearthStone_thumnail.jpg" />
+    <Resource Include="Home\Resources\Warcraft_Background.jpg" />
+    <Resource Include="Home\Resources\Warcraft_Logo.png" />
+    <Resource Include="Home\Resources\Warcraft_thumnail.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Slate.WPF\src\Slate.WPF.Markup\Slate.WPF.Markup.csproj" />
     <ProjectReference Include="..\Battlenet.Common\Battlenet.Common.csproj" />
     <ProjectReference Include="..\Battlenet.Service\Battlenet.Service.csproj" />

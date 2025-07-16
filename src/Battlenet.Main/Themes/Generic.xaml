@@ -5,6 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/LeftSideBarItem.xaml" />
         <ResourceDictionary Source="/Battlenet.Main;component/Themes/Game/GameCard.xaml" />
+        <ResourceDictionary Source="/Battlenet.Main;component/Themes/Home/AdListBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

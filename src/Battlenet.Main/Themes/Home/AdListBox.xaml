@@ -1,0 +1,157 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:Battlenet.Main._Shared.Converters"
+    xmlns:home="clr-namespace:Battlenet.Main.Home.Components">
+    <Storyboard x:Key="HoverAnimation">
+        <DoubleAnimation
+            Storyboard.TargetName="contentTransform"
+            Storyboard.TargetProperty="Y"
+            To="-2"
+            Duration="0:0:0.2" />
+    </Storyboard>
+    <Storyboard x:Key="HoverResetAnimation">
+        <DoubleAnimation
+            Storyboard.TargetName="contentTransform"
+            Storyboard.TargetProperty="Y"
+            To="0"
+            Duration="0:0:0.2" />
+    </Storyboard>
+    <converters:ImagePathToSourceConverter x:Key="ImagePathToSourceConverter" />
+    <Style x:Key="item" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Grid Width="228" Height="225">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="96" />
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding Thumnail, Converter={StaticResource ImagePathToSourceConverter}}" />
+                        <Grid Grid.Row="1" Background="#23262c">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel.RenderTransform>
+                                    <TranslateTransform x:Name="contentTransform" Y="0" />
+                                </StackPanel.RenderTransform>
+                                <TextBlock Foreground="#6e7075" Text="{Binding GameName}" />
+                                <TextBlock Foreground="#d5d5d7" Text="{Binding GameComment}" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource HoverAnimation}" />
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource HoverResetAnimation}" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type home:AdListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource item}" />
+        <Setter Property="Height" Value="645" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Grid Height="{TemplateBinding Height}">
+                        <ContentControl
+                            Height="455"
+                            VerticalAlignment="Top"
+                            DataContext="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}}">
+                            <ContentControl.Style>
+                                <Style TargetType="ContentControl">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ContentControl">
+                                                <Grid>
+                                                    <Image Source="{Binding BackgroundImage, Converter={StaticResource ImagePathToSourceConverter}}" />
+                                                    <Grid>
+                                                        <Grid.Resources>
+                                                            <Style TargetType="{x:Type Button}">
+                                                                <Setter Property="Cursor" Value="Hand" />
+                                                                <Setter Property="Foreground" Value="White" />
+                                                                <Setter Property="Background" Value="#0074e0" />
+                                                                <Setter Property="FontSize" Value="15" />
+                                                                <Setter Property="VerticalAlignment" Value="Center" />
+                                                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                                                <Setter Property="BorderBrush" Value="Transparent" />
+                                                                <Setter Property="Template">
+                                                                    <Setter.Value>
+                                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                                            <Border
+                                                                                Height="{TemplateBinding Height}"
+                                                                                Padding="20,10"
+                                                                                Background="{TemplateBinding Background}"
+                                                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                                                CornerRadius="3">
+                                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+                                                                            <ControlTemplate.Triggers>
+                                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                                    <Setter Property="BorderBrush" Value="#47a6ff" />
+                                                                                </Trigger>
+                                                                            </ControlTemplate.Triggers>
+                                                                        </ControlTemplate>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Style>
+                                                        </Grid.Resources>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="1.5*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackPanel
+                                                            Grid.Column="0"
+                                                            Margin="100,0,0,0"
+                                                            HorizontalAlignment="Left"
+                                                            VerticalAlignment="Center">
+                                                            <Image
+                                                                Width="271"
+                                                                Height="104"
+                                                                Source="{Binding Logo, Converter={StaticResource ImagePathToSourceConverter}}" />
+                                                            <TextBlock
+                                                                Margin="0,15,0,10"
+                                                                FontSize="28.5"
+                                                                FontWeight="Bold"
+                                                                Foreground="White"
+                                                                Text="{Binding AdTitle}"
+                                                                TextAlignment="Center"
+                                                                TextWrapping="Wrap" />
+                                                            <TextBlock
+                                                                Margin="0,0,0,20"
+                                                                Foreground="#b8bebe"
+                                                                Text="{Binding AdSubTitle}"
+                                                                TextAlignment="Center" />
+                                                            <Button Content="{Binding ButtonName}" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ContentControl.Style>
+                        </ContentControl>
+                        <ItemsPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,17 @@
+﻿<UserControl
+    x:Class="Battlenet.Main.Home.Content"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:Battlenet.Main.Home.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Battlenet.Main.Home"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Margin="0,150,0,0"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    ViewModelInjector.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <ScrollViewer>
+        <components:AdListBox VerticalAlignment="Top" ItemsSource="{Binding SlideAdModels}" />
+    </ScrollViewer>
+</UserControl>

@@ -15,6 +15,7 @@ public class Module : IModule
     public void Register(IServiceCollection services)
     {
         services.AddTransient<BattlenetGameLoad> ();
+        services.AddSingleton<Home.ContentModel> ();
     }
 
     public void RegisterComponent(IComponentRegistry componentRegistry)
@@ -35,6 +36,6 @@ public class Module : IModule
 
     public void ViewModelMapper(IViewModelMapper modelMapper)
     {
-
+        modelMapper.Register<Home.Content, Home.ContentModel> (reuse: ReuseOption.Singleton);
     }
 }
